@@ -38,7 +38,7 @@ export default function Footer() {
                     </div>
                     {/* Social Media Section */}
                     <div className="footer-section">
-                        <h3>Follow Us</h3>
+                        
                         <div className="social-icons">
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                                 <FaFacebook />
