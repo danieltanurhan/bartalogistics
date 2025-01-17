@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400&display=swap');
+
+.navbar {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+/* Remove the body padding-top that we added earlier since we want content to flow under navbar */
+body {
+    padding-top: 0;
+}
+
+/* Add styling for scrolled state */
+.navbar-scrolled {
+    position: fixed; /* Change to fixed when scrolled */
+    background-color: #1A1A1A; /* Dark red background when scrolled */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+.navbar-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 5rem;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav li {
+    margin-left: 1rem;
+    
+}
+
+.services-label li {
+    color: white;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.navbar-nav:hover {
+    color: #007A78  ;
+}
+
+.navbar-link {
+    color: white; /* Same color as other links */
+    text-decoration: none; /* No underline */
+    cursor: default; /* Change cursor to default to indicate it's not clickable */
+
+}
+
+.services-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1A1A1A;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.services-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10);
+}
+
+.dropdown-menu li {
+    margin: 0 !important;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem;
+    display: block;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add a small arrow indicator to the Services link */
+.services-dropdown > a::after {
+    content: '▼';
+    display: inline-block;
+    font-size: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.navbar-nav > li:last-child a {
+    background-color: #4A0404;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav > li:last-child a:hover {
+    color: white;
+    background-color: #007A78; /* Slightly lighter shade for hover effect */
+}

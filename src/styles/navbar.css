@@ -1,0 +1,278 @@
+/* Navbar specific styles - to be placed in navbar.css */
+.navbar {
+  position: absolute; /* Changed from fixed to absolute to match header positioning */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.75rem 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-family);
+}
+
+.navbar-scrolled {
+  position: fixed; /* Changes to fixed when scrolled */
+  background-color: #1A1A1A;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  position: relative; /* Added for proper stacking context */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Logo area - left side */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 0.5rem;
+  transition: height 0.3s ease;
+}
+
+/* Menu button - only on mobile */
+.navbar-menu-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: var(--bg-white);
+  cursor: pointer;
+}
+
+.navbar-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Center navigation area */
+.navbar-center {
+  display: none; /* Hidden on mobile */
+}
+
+/* Right side area */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Quote button */
+.navbar-quote-btn {
+  background-color: var(--secondary-color);
+  color: var(--bg-white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  z-index: 2; /* Ensure button stays above background */
+}
+
+.navbar-quote-btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Mobile Sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: #1A1A1A;
+  z-index: 1002;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-content {
+  padding: 2rem var(--container-padding);
+}
+
+.sidebar-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--bg-white);
+  font-family: var(--font-family);
+  font-size: 14px;
+  padding: 0.75rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  margin: 0.5rem 0;
+}
+
+.sidebar-nav a,
+.sidebar-services-btn {
+  display: block;
+  color: var(--bg-white);
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-size: 14px;
+  padding: 0.75rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-nav a:hover,
+.sidebar-services-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar-logo img {
+    height: 0.1rem;
+  }
+
+  .navbar-menu-btn {
+    display: none;
+  }
+
+  /* Show desktop navigation */
+  .navbar-center {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .navbar-nav-desktop {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .navbar-nav-desktop li {
+    margin-left: 1rem;
+  }
+
+  .navbar-nav-desktop a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-family: var(--font-family);
+  }
+
+  .navbar-nav-desktop a:hover {
+    color: var(--primary-color);
+  }
+
+  /* Services dropdown */
+  .services-dropdown {
+    position: relative;
+  }
+
+  .services-dropdown > a::after {
+    content: '▼';
+    display: inline-block;
+    font-size: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1A1A1A;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu li {
+    margin: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 0.75rem;
+    display: block;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 1024px) {
+  .navbar-nav-desktop li {
+    margin-left: 2rem;
+  }
+}

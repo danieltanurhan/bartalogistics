@@ -1,0 +1,440 @@
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 1440px;
+  --container-padding: 20px;
+  --primary-color: #007A78;
+  --secondary-color: #4A0404;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --bg-light: #F5F5F5;
+  --bg-white: #ffffff;
+  --font-family: 'Sarabun', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+/* Layout Container */
+.home-content-container {
+  width: 100%;
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+/* Hero Section */
+.home-intro {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/images/international-moving-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.home-intro-content {
+  padding: 40px;
+  max-width: 500px;
+  color: white;
+}
+
+.home-intro-content h1 {
+  font-size: 2rem; /* Base size for mobile */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.home-intro-content p {
+  font-size: 1rem; /* Base size for mobile */
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Social Icons */
+.home-social-icons {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.home-social-icons a {
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.home-social-icons a:hover {
+  color: #e5e7eb;
+  transform: scale(1.3);
+}
+
+/* Responsive Breakpoints */
+/* Mobile S (325px) */
+@media screen and (min-width: 325px) {
+  .home-content-container {
+    max-width: 100%;
+  }
+
+  .home-intro-content {
+    padding: 20px;
+  }
+
+  .home-social-icons {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+/* Mobile M (375px) */
+@media screen and (min-width: 375px) {
+  .home-intro-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile L (425px) */
+@media screen and (min-width: 425px) {
+  .home-intro-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-intro-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet (768px) */
+@media screen and (min-width: 768px) {
+  .home-intro-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-intro-content p {
+    font-size: 1.2rem;
+  }
+
+  .home-content-container {
+    max-width: 720px;
+  }
+}
+
+/* Laptop (1024px) */
+@media screen and (min-width: 1024px) {
+  .home-intro-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content-container {
+    max-width: 960px;
+  }
+}
+
+/* Laptop L (1440px) */
+@media screen and (min-width: 1440px) {
+  .home-content-container {
+    max-width: var(--max-width);
+  }
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 0;
+  background-color: var(--bg-light);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-text {
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+.about-text h1 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 100;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.about-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Services Section */
+.services-section {
+  padding: 50px 0 100px;
+  background-color: var(--bg-white);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 20px;
+}
+
+.services-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 100;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.service-card {
+  position: relative;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Info Board Section */
+.info-board-section {
+  position: relative;
+  padding: 60px 0;
+  color: white;
+  overflow: hidden;
+}
+
+.info-board-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/freight-forwarding-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.info-board-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+/* Industries Section */
+.industries-section {
+  padding: 60px 0;
+  background-color: var(--bg-white);
+}
+
+.industries-header-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Partners Section */
+.partners-section {
+  padding: 40px 0;
+  background-color: var(--bg-white);
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px 0;
+}
+
+.partner-logo {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive Breakpoints for All Sections */
+@media screen and (min-width: 768px) {
+  /* About Section */
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .about-text {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .service-card {
+    height: 350px;
+  }
+
+  /* Info Board Section */
+  .info-board-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Industries Section */
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Partners Section */
+  .partners-grid {
+    justify-content: space-between;
+  }
+  
+  .partner-logo {
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* About Section */
+  .about-text h2 {
+    font-size: 2.8rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .service-card {
+    height: 400px;
+  }
+
+  /* Info Board Section */
+  .info-board-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Industries Section */
+  .industries-header-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .industries-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* About Section */
+  .about-text {
+    max-width: 600px;
+  }
+
+  /* Services Section */
+  .services-header {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Small Mobile Specific Adjustments */
+@media screen and (max-width: 374px) {
+  .service-card {
+    height: 250px;
+  }
+  
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .partner-logo {
+    height: 35px;
+  }
+}
