@@ -6,11 +6,11 @@
 }
 
 :root {
-  --max-width: 1440px;
   --container-padding: 20px;
   --primary-color: #007A78;
   --secondary-color: #4A0404;
   --text-primary: #333;
+  --text-header: #bebebe;
   --text-secondary: #666;
   --bg-light: #F5F5F5;
   --bg-white: #ffffff;
@@ -146,7 +146,7 @@ header {
   }
 
   .home-content-container {
-    max-width: 720px;
+    
   }
 }
 
@@ -157,14 +157,14 @@ header {
   }
 
   .home-content-container {
-    max-width: 960px;
+    
   }
 }
 
 /* Laptop L (1440px) */
 @media screen and (min-width: 1440px) {
   .home-content-container {
-    max-width: var(--max-width);
+    
   }
 }
 
@@ -172,31 +172,39 @@ header {
 .about-section {
   padding: 60px 0;
   background-color: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 30px;
 }
 
 .about-text {
-  width: 100%;
+  max-width: 400px;
   font-family: var(--font-family);
 }
 
 .about-text h1 {
   font-size: 1rem;
-  color: var(--text-secondary);
+  
+  color: var(--text-header);
   font-weight: bold;
   margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .about-text h2 {
   font-size: 2rem;
+  line-height: 1;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
-  font-weight: 100;
+  font-weight: 700;
 }
 
 .about-text p {
@@ -220,14 +228,15 @@ header {
 }
 
 .about-image {
-  width: 100%;
+
 }
 
 .about-image img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  /* height: auto; */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
 /* Services Section */
@@ -344,7 +353,7 @@ header {
   
   .about-text {
     flex: 1;
-    max-width: 50%;
+    max-width: 400px;
   }
   
   .about-text h2 {
@@ -413,9 +422,9 @@ header {
 }
 
 @media screen and (min-width: 1440px) {
-  /* About Section */
+  About Section
   .about-text {
-    max-width: 600px;
+    max-width: 400px;
   }
 
   /* Services Section */
