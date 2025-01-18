@@ -7,15 +7,14 @@
 
 :root {
   --container-padding: 20px;
-  --primary-color: #007A78;
-  --secondary-color: #4A0404;
+  --primary-color: #007a78;
+  --secondary-color: #4a0404;
   --text-primary: #333;
   --text-header: #bebebe;
   --text-secondary: #666;
-  --bg-light: #F5F5F5;
+  --bg-light: #f5f5f5;
   --bg-white: #ffffff;
-  --font-family: 'Sarabun', sans-serif;
-  
+  --font-family: "Sarabun", sans-serif;
 }
 
 body {
@@ -53,7 +52,7 @@ header {
   justify-content: left;
   align-items: center;
   height: 100vh;
-  background-image: url('/images/international-moving-bg.jpg');
+  background-image: url("/images/international-moving-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,7 +64,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  
+
   z-index: 1;
   margin-inline-start: 20px;
 }
@@ -156,7 +155,7 @@ header {
 
 .about-text h1 {
   font-size: 1rem;
-  
+
   color: var(--text-header);
   font-weight: bold;
   margin-bottom: 0.25rem;
@@ -193,7 +192,6 @@ header {
 }
 
 .about-image {
-
 }
 
 .about-image img {
@@ -230,14 +228,65 @@ header {
 }
 
 .service-card {
-  position: relative;
+  overflow: hidden;
   height: 300px;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
+.service-image {
+  position: relative;
+  background: url("https://loremflickr.com/400/300");
+  background-size: cover;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+
+.service-image:hover {
+  transform: scale(1.1);
+}
+
+.service-overlay {
+  position: absolute;
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.image img:hover {
+  transform: scale(1.2);
+}
+
+.content {
+  max-width: 550px;
+  position: absolute;
+  top: 60%;
+  left: 7%;
+}
+
+.content h3,
+.content p {
+  color: white;
+  font-family: sans-serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.content h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.content p {
+  font-weight: 500;
+}
 /* Info Board Section */
 .info-board-section {
   position: relative;
@@ -247,13 +296,13 @@ header {
 }
 
 .info-board-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/images/freight-forwarding-bg.jpg');
+  background-image: url("/images/freight-forwarding-bg.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.6;
@@ -315,12 +364,12 @@ header {
     flex-direction: row;
     align-items: center;
   }
-  
+
   .about-text {
     flex: 1;
     max-width: 400px;
   }
-  
+
   .about-text h2 {
     font-size: 2.5rem;
   }
@@ -329,7 +378,7 @@ header {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .service-card {
     height: 350px;
   }
@@ -348,7 +397,7 @@ header {
   .partners-grid {
     justify-content: space-between;
   }
-  
+
   .partner-logo {
     height: 50px;
   }
@@ -364,7 +413,7 @@ header {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .service-card {
     height: 400px;
   }
@@ -380,15 +429,14 @@ header {
     text-align: left;
     align-items: center;
   }
-  
+
   .industries-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (min-width: 1440px) {
-  About Section
-  .about-text {
+  About Section .about-text {
     max-width: 400px;
   }
 
@@ -405,11 +453,11 @@ header {
   .service-card {
     height: 250px;
   }
-  
+
   .about-text h2 {
     font-size: 1.8rem;
   }
-  
+
   .partner-logo {
     height: 35px;
   }
