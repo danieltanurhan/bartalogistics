@@ -118,11 +118,15 @@
 }
 
 .sidebar.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   left: 0;
 }
 
 .sidebar-content {
   padding: 2rem var(--container-padding);
+  text-transform: uppercase;
 }
 
 .sidebar-back-btn {
@@ -133,7 +137,8 @@
   border: none;
   color: var(--bg-white);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 24px;
+  
   padding: 0.75rem;
   cursor: pointer;
   width: 100%;
@@ -156,7 +161,8 @@
   color: var(--bg-white);
   text-decoration: none;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 24px;
+  font-weight: 500;
   padding: 0.75rem;
   width: 100%;
   text-align: left;
