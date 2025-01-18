@@ -1,37 +1,38 @@
-/* Navbar specific styles - to be placed in navbar.css */
+/* Base styles - Mobile first */
 .navbar {
-  position: absolute; /* Changed from fixed to absolute to match header positioning */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   padding: 0.75rem 0;
+  
   background-color: transparent;
   transition: background-color 0.3s ease;
   font-family: var(--font-family);
 }
 
 .navbar-scrolled {
-  position: fixed; /* Changes to fixed when scrolled */
+  position: fixed;
   background-color: #1A1A1A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
-  position: relative; /* Added for proper stacking context */
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+  max-width: 825px; /* Set a max-width */
+  margin: 0 auto; /* Center the container */
+  padding: 0 var(--container-padding); /* Add padding for spacing */
 }
 
-/* Logo area - left side */
 .navbar-left {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   gap: 1rem;
 }
 
@@ -41,11 +42,10 @@
 }
 
 .navbar-logo img {
-  height: 0.5rem;
-  transition: height 0.3s ease;
+  height: 3em; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
 }
 
-/* Menu button - only on mobile */
 .navbar-menu-btn {
   background: none;
   border: none;
@@ -59,18 +59,15 @@
   height: 24px;
 }
 
-/* Center navigation area */
 .navbar-center {
   display: none; /* Hidden on mobile */
 }
 
-/* Right side area */
 .navbar-right {
   display: flex;
   align-items: center;
 }
 
-/* Quote button */
 .navbar-quote-btn {
   background-color: var(--secondary-color);
   color: var(--bg-white);
@@ -82,14 +79,13 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-  z-index: 2; /* Ensure button stays above background */
+  z-index: 2;
 }
 
 .navbar-quote-btn:hover {
   background-color: var(--primary-color);
 }
 
-/* Mobile Sidebar */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -174,25 +170,44 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Tablet and Desktop styles */
-@media (min-width: 768px) {
+@media (max-width: 400px) {
+  .navbar-container {
+    padding: 0 5px;
+  }
+
+  .navbar-left {
+    gap: 0.5rem;
+  }
+
+  .navbar-logo img {
+    height: 2.5em; /* Adjust the height for smaller screens */
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 825px) {
   .navbar {
     padding: 1rem 0;
   }
 
   .navbar-logo img {
-    height: 0.1rem;
+    height: 4rem; /* Adjust the height for larger screens */
+  }
+
+  .navbar-container {
+    max-width: 1140px;
+    padding-inline: 40px;
   }
 
   .navbar-menu-btn {
     display: none;
   }
 
-  /* Show desktop navigation */
   .navbar-center {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     flex: 1;
+    margin-right: 24px;
   }
 
   .navbar-nav-desktop {
@@ -218,7 +233,6 @@
     color: var(--primary-color);
   }
 
-  /* Services dropdown */
   .services-dropdown {
     position: relative;
   }
@@ -270,9 +284,13 @@
   }
 }
 
-/* Desktop-specific adjustments */
-@media (min-width: 1024px) {
+/* Desktop styles */
+@media (min-width: 825px) {
   .navbar-nav-desktop li {
     margin-left: 2rem;
+  }
+
+  .navbar-container {
+    max-width: 2400px;
   }
 }

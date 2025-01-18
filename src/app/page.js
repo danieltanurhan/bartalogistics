@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <div className="home-intro">
         <div className="home-content-container">
-          <div className="home-intro-content">
+          <div className="home-intro-content home-content">
             <h1>End-to-End Global Logistic Solutions</h1>
             <p>Providing the best logistics services in the world</p>
           </div>

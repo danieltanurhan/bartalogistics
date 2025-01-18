@@ -31,6 +31,7 @@ body {
 .home-content-container {
   width: 100%;
   padding: 0 var(--container-padding);
+  padding-inline: 40px;
   margin: 0 auto;
 }
 
@@ -44,6 +45,7 @@ header {
   z-index: 10;
 }
 
+/* Base styles - Mobile first */
 /* Hero Section */
 .home-intro {
   position: relative;
@@ -58,9 +60,18 @@ header {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.home-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  
+  z-index: 1;
+  margin-inline-start: 20px;
+}
+
 .home-intro-content {
-  padding: 40px;
-  max-width: 500px;
+  max-width: 100%; /* Full width for mobile */
   color: white;
 }
 
@@ -81,8 +92,8 @@ header {
 /* Social Icons */
 .home-social-icons {
   position: absolute;
-  right: 30px;
-  bottom: 30px;
+  right: 15px; /* Adjusted for mobile */
+  bottom: 15px; /* Adjusted for mobile */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -100,43 +111,14 @@ header {
   transform: scale(1.3);
 }
 
-/* Responsive Breakpoints */
-/* Mobile S (325px) */
-@media screen and (min-width: 325px) {
-  .home-content-container {
-    max-width: 100%;
-  }
-
-  .home-intro-content {
-    padding: 20px;
-  }
-
-  .home-social-icons {
-    right: 15px;
-    bottom: 15px;
-  }
-}
-
-/* Mobile M (375px) */
-@media screen and (min-width: 375px) {
-  .home-intro-content h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Mobile L (425px) */
-@media screen and (min-width: 425px) {
-  .home-intro-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .home-intro-content p {
-    font-size: 1.1rem;
-  }
-}
-
 /* Tablet (768px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 825px) {
+  .home-intro-content {
+    padding: 40px; /* Increased padding for larger screens */
+    max-width: 700px; /* Constrain width for larger screens */
+    margin-inline: 40px;
+  }
+
   .home-intro-content h1 {
     font-size: 3rem;
   }
@@ -145,26 +127,9 @@ header {
     font-size: 1.2rem;
   }
 
-  .home-content-container {
-    
-  }
-}
-
-/* Laptop (1024px) */
-@media screen and (min-width: 1024px) {
-  .home-intro-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .home-content-container {
-    
-  }
-}
-
-/* Laptop L (1440px) */
-@media screen and (min-width: 1440px) {
-  .home-content-container {
-    
+  .home-social-icons {
+    right: 30px; /* Adjusted for larger screens */
+    bottom: 30px; /* Adjusted for larger screens */
   }
 }
 
