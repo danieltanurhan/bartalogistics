@@ -87,7 +87,6 @@ const Navbar = () => {
         onShowServices={() => setShowServices(true)}
         onHideServices={() => setShowServices(false)}
       />
-
       <QuoteForm isOpen={isQuoteFormOpen} onClose={() => setIsQuoteFormOpen(false)} />
     </>
   );
@@ -108,6 +107,7 @@ const Sidebar = ({ isOpen, showServices, onClose, onShowServices, onHideServices
 
 const SidebarMain = ({ onShowServices, onClose }) => (
   <div className="sidebar-content">
+    <button className="sidebar-close-btn" onClick={onClose}>×</button>
     <ul className="sidebar-nav">
       <li><Link href="/about" onClick={onClose}>ABOUT US</Link></li>
       <li>

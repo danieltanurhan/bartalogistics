@@ -251,6 +251,7 @@ header {
   width: 100%;
   overflow: hidden;
   transition: transform 0.3s ease;
+  position: relative;
 }
 
 .image {
@@ -258,7 +259,6 @@ header {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  
 }
 
 .image::before {
@@ -275,7 +275,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  display: cover;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -290,13 +290,14 @@ header {
 
 .content {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
   right: 0;
   padding: 2rem;
   z-index: 2;
-  transform: translateY(calc(100% - 7rem)); /* Adjust 80px to match your h3 height */
+  /* transform: translateY(calc(100% - 7rem)); Adjust 80px to match your h3 height */
   transition: all 0.4s ease-in-out;
+
 }
 
 .content p {
@@ -306,6 +307,7 @@ header {
   font-size: 1rem;
   margin-top: 0.5rem;
   opacity: 0;
+  height: 50px;
 }
 
 .content h3 {
@@ -318,7 +320,7 @@ header {
 }
 
 .service-card:hover .content {
-  transform: translateY(-20px);
+  transform: translateY(-24px);
 }
 
 .service-card:hover .content p {

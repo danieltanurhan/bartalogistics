@@ -130,6 +130,17 @@
   text-transform: uppercase;
 }
 
+.sidebar-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color:  white;
+}
+
 .sidebar-back-btn {
   display: flex;
   align-items: center;
