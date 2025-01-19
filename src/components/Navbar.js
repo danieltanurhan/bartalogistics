@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, ChevronLeft } from 'lucide-react';
+import { Menu, ChevronLeft, ChevronRight } from 'lucide-react';
 import QuoteForm from './QuoteForm';
 import '@/styles/navbar.css';
 
@@ -93,44 +93,6 @@ const Navbar = () => {
   );
 };
 
-const NavbarLeft = ({ onMenuClick }) => (
-  <div className="navbar-left">
-    <button className="navbar-menu-btn" onClick={onMenuClick} aria-label="Open menu">
-      <Menu />
-    </button>
-    <Link href="/" className="navbar-logo">
-      <img src="/images/logo1.png" alt="Barta Logistics Logo" />
-    </Link>
-  </div>
-);
-
-const NavbarCenter = () => (
-  <div className="navbar-center">
-    <ul className="navbar-nav-desktop">
-      <li><Link href="/about">ABOUT US</Link></li>
-      <li className="services-dropdown">
-        <Link href="#" className="navbar-link">SERVICES</Link>
-        <ul className="dropdown-menu">
-          {servicesLinks.map((service) => (
-            <li key={service.href}>
-              <Link href={service.href}>{service.text}</Link>
-            </li>
-          ))}
-        </ul>
-      </li>
-      <li><Link href="/blog">BLOG</Link></li>
-    </ul>
-  </div>
-);
-
-const NavbarRight = ({ onQuoteClick }) => (
-  <div className="navbar-right">
-    <button className="navbar-quote-btn" onClick={onQuoteClick}>
-      REQUEST A QUOTE
-    </button>
-  </div>
-);
-
 const Sidebar = ({ isOpen, showServices, onClose, onShowServices, onHideServices }) => (
   <>
     <div className={`sidebar-overlay ${isOpen ? 'active' : ''}`} onClick={onClose} />
@@ -150,7 +112,7 @@ const SidebarMain = ({ onShowServices, onClose }) => (
       <li><Link href="/about" onClick={onClose}>ABOUT US</Link></li>
       <li>
         <button className="sidebar-services-btn" onClick={onShowServices}>
-          SERVICES
+          SERVICES <ChevronRight />
         </button>
       </li>
       <li><Link href="/blog" onClick={onClose}>BLOG</Link></li>
