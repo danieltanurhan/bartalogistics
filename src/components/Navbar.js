@@ -107,6 +107,9 @@ const Sidebar = ({ isOpen, showServices, onClose, onShowServices, onHideServices
 
 const SidebarMain = ({ onShowServices, onClose }) => (
   <div className="sidebar-content">
+    <Link href="/" className="navbar-logo">
+      <img src="/images/logo1.png" alt="Barta Logistics Logo" />
+    </Link>
     <button className="sidebar-close-btn" onClick={onClose}>×</button>
     <ul className="sidebar-nav">
       <li><Link href="/about" onClick={onClose}>ABOUT US</Link></li>
