@@ -27,7 +27,6 @@ export default function Footer() {
                         {/* Services Section */}
                         <div className="footer-section">
                             <ul>
-                                <p>Our Services</p>
                                 <li><Link href="/services/international-moving">International Moving</Link></li>
                                 <li><Link href="/services/air-freight">Air Freight</Link></li>
                                 <li><Link href="/services/sea-freight">Sea Freight</Link></li>

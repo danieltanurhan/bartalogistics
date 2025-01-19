@@ -55,10 +55,10 @@ const Service = () => {
 
   return (
     <div>
-      <div className="services-section">
+      <div className="sections-section">
         <div className="home-content-container">
-          <div className="industries-header">
-            <div className="industries-header-content">
+          <div className="section-header">
+            <div className="section-header-content">
               <h2>
                 Services<span className="title-underline"></span>
               </h2>
@@ -70,17 +70,18 @@ const Service = () => {
             </div>
           </div>
           <div className="services-grid">
-            {serviceList.map((ele) => (
+            {serviceList.map((ele, index) => (
               <Link
+                key={index}
                 href="/services/international-moving"
                 className="service-card"
               >
-                <div className="wrapper">
+                <div  className="wrapper">
                   <div className="image">
                     <img src={ele.image} alt="" />
 
                     <div className="content">
-                      <h3>{ele.title}</h3>
+                      <h3>{ele.title}<span className="title-underline"></span></h3>
                       <p>{ele.description}</p>
                     </div>
                   </div>

@@ -47,13 +47,6 @@
     align-items: start;
 }
 
-.footer-section h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-    margin-bottom: 1rem;
-}
-
 .footer-section ul {
     list-style: none;
     padding: 0;
