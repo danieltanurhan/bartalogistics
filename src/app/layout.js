@@ -1,11 +1,10 @@
 import '../styles/globals.css'
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import Navbar from "@/components/Navbar";
+import { QuoteFormProvider } from '@/components/QuoteFormContext';
 
 export default function RootLayout({ children }) {
   return (
-    
     <html lang="en">
       <head>
       <style>
@@ -13,9 +12,11 @@ export default function RootLayout({ children }) {
       </style>
       </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <QuoteFormProvider>
+          <main>{children}</main>
+          <Footer />
+        </QuoteFormProvider>
+        
       </body>
     </html>
   );

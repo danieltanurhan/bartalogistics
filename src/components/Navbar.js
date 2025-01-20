@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Menu, ChevronLeft, ChevronRight } from 'lucide-react';
 import QuoteForm from './QuoteForm';
 import '@/styles/navbar.css';
@@ -16,9 +16,8 @@ const servicesLinks = [
   { href: '/services/value-added', text: 'Value Added Services' }
 ];
 
-const Navbar = () => {
+const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
 

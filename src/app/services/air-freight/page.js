@@ -1,10 +1,10 @@
-  "use client";
+"use client";
 
+import { QuoteFormContext } from '@/components/QuoteFormContext.js';
 import '@/styles/aboutus.css'
 import '@/styles/globals.css'
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { Lightbulb, Truck, Globe, ShieldCheck } from 'lucide-react';
-import '@/styles/globals.css';
+import { useContext } from 'react';
 
 const differenceItems = [
   {
@@ -29,13 +29,18 @@ const differenceItems = [
   }
 ];
 
-export default function AboutUs() {
+const AirFreight = () => {
+  const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
+  const onQuoteClick = () => {
+    setIsQuoteFormOpen(true);
+  };
+
   return (
     <div>
       <div className="home-intro">
         <div className="home-content-container">
           <div className="home-intro-content">
-            <h1>About Us</h1>
+            <h1>Air Freight</h1>
             <p>We provide top-notch logistics solutions tailored to your needs.</p>
           </div>
         </div>
@@ -63,6 +68,9 @@ export default function AboutUs() {
                 a commitment to excellence, we ensure your cargo reaches its
                 destination safely and efficiently.
               </p>
+              <button className="about-button" onClick={onQuoteClick}>
+              REQUEST A QUOTE
+              </button>
             </div>
             <div className="about-image">
               <img
@@ -73,29 +81,11 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className ="mission-section">
-        <div className="about-container">
-          <div className="about-content home-content-container">
-            <div className="mission-image">
-              <img
-                src="/images/aboutus/mission.png"
-                alt="About Our Logistics Services"
-              />
-            </div>
-            <div className="mission-text">
-              <h2>Our Mission<span className="title-underline"></span></h2>
-              <p>Our mission is to become the leading global logistics provider, delivering exceptional services to our clients.</p>
-              <h2>Our Mission<span className="title-underline"></span></h2>
-              <p>Our mission is to become the leading global logistics provider, delivering exceptional services to our clients.</p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="what-different">
         <div className="what-different-container home-content-container">
           <div className="section-header">
             <div className="section-header-content">
-              <h2>What Makes Us Different<span className="title-underline"></span></h2>
+              <h2>Services We Offer<span className="title-underline"></span></h2>
               <p>Our mission is to become the leading global logistics provider, delivering exceptional services to our clients.</p>
             </div>
             <div className="section-header-extra-content">
@@ -122,4 +112,6 @@ export default function AboutUs() {
       </div>
     </div>
   )
-}
+};
+
+export default AirFreight;

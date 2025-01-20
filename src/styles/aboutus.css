@@ -11,6 +11,18 @@
     background-repeat: no-repeat;
 }
 
+.what-different .section-header {
+  display: flex;
+  justify-content: center;
+  padding-inline: 80px;
+
+}
+
+.what-different .section-header-extra-content {
+  max-width: 1px;
+  width: 100%;
+}
+
 .mission-section {
   padding: 60px 0;
   background-color: var(--bg-white);
@@ -60,7 +72,18 @@
 }
 
 @media (min-width: 768px) {
+  .mission-text {
+    max-width: 400px;
+  }
+
   .mission-image img {
     max-width: 500px;
+  }
+
+}
+
+@media (min-width: 1225px) {
+  .what-different .section-header-extra-content {
+    max-width: 200px;
   }
 }
