@@ -193,7 +193,6 @@ header {
 .about-image img {
   max-width: 100%;
   /* height: auto; */
-  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
@@ -235,12 +234,11 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  /* justify-items: center; */
 }
 
 .service-card {
   position: relative;
-  height: 300px;
-  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   overflow: hidden;
@@ -277,11 +275,6 @@ header {
   object-fit: cover;
   display: cover;
   transition: transform 0.4s ease-in-out;
-}
-
-.service-card:hover {
-  /* transform: scale(1.1); */
-  border-radius: 0;
 }
 
 .service-card:hover .image img {
@@ -357,6 +350,40 @@ header {
   text-align: center;
 }
 
+.info-board-item {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  text-align: left;
+  padding: 20px;
+}
+
+.info-board-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+}
+
+.info-board-icon {
+  display: flex;
+  align-items: start;
+  padding: 12px;
+  color: var(--secondary-color);
+}
+
+.info-board-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.1rem;
+}
+
+.info-board-description {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
 /* Industries Section */
 .industries-grid {
   display: grid;
@@ -406,7 +433,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(230, 57, 70, 0.8);
+  background-color: rgba(230, 57, 70, 0.5);
   color: white;
   padding: 1.5rem;
   border-radius: 50%;
@@ -483,11 +510,15 @@ header {
 
   .about-text {
     flex: 1;
-    max-width: 400px;
+    /* max-width: 400px; */
   }
 
   .about-text h2 {
     font-size: 2.5rem;
+  }
+
+  .about-image img {
+    max-width: 500px;
   }
 
   /* Section Between Section */
@@ -518,7 +549,11 @@ header {
 
   /* Info Board Section */
   .info-board-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .info-board-description {
+    /* max-height: 400px; */
   }
 
   /* Industries Section */
@@ -528,7 +563,7 @@ header {
 
   /* Partners Section */
   .partners-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 2fr);
   }
 
   .partner-logo {
@@ -546,25 +581,54 @@ header {
   /* Services Section */
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
+    padding-inline: 80px;
+    justify-items: center;
+    max-width: 1250px;
+
   }
 
   .service-card {
-    height: 400px;
+    max-height: 300px;
+    max-width: 400px;
   }
 
   /* Info Board Section */
   .info-board-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    /* max-width: 1024px; */
+    justify-self: center;
+    padding-inline: 80px;
   }
 
   .industries-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .partners-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
 }
 
 @media screen and (min-width: 1440px) {
   .about-text {
-    max-width: 400px;
+    /* max-width: 400px; */
+  }
+
+  .services-grid {
+    justify-self: center;
+    max-width: 1440px;
+  }
+
+  .info-board-grid {
+    grid-template-columns: repeat(4, 1fr);   
+    max-width: 1920px;   
+  }
+
+  .industries-grid {
+    justify-self: center;
+    max-width: 1440px;
   }
 
   .partner-logo {

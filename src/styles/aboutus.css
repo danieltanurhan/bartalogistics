@@ -3,42 +3,64 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 60vh;
+    height: 43vh;
     margin-top: 0;
     background-image: url('/images/international-moving-bg.jpg');
     background-size: half;
     background-position: center;
     background-repeat: no-repeat;
-  }
-  
-  .home-content-container {
-    max-width: 1440px; /* Set maximum width */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Add horizontal padding */
-    width: 100%; /* Ensure it takes full width */
-  }
-  
-  .home-intro-content {
-    text-transform: capitalize;
-    padding: 40px;
+}
+
+.mission-section {
+  padding: 60px 0;
+  background-color: var(--bg-white);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mission-image img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.mission-text {
+  max-width: 570px;
+  font-family: var(--font-family);
+}
+
+.mission-text h2 {
+  font-size: 30px;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.what-different .home-content-container {
+  padding-bottom: 40px;
+}
+
+.what-different {
+  margin-top: 1.5rem;
+}
+
+.what-different .section-header h2 {
+  font-size: 30px;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.what-different .info-board-icon {
+  color: var(--text-primary);
+}
+
+.what-different .info-board-title {
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .mission-image img {
     max-width: 500px;
-    flex-flow: column;
-    color: white;
-    font-size: 1.5rem;
-    font-family: 'Brandon Grotesque';
   }
-  
-  /* Add these new styles */
-  .home-intro-content h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-transform: none; /* Override capitalize if you want specific capitalization in the h1 */
-  }
-  
-  .home-intro-content p {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    opacity: 0.9; /* Makes the paragraph slightly more subtle than the heading */
-  }
+}

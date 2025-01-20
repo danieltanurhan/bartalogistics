@@ -30,7 +30,9 @@ export default function Footer() {
                                 <li><Link href="/services/international-moving">International Moving</Link></li>
                                 <li><Link href="/services/air-freight">Air Freight</Link></li>
                                 <li><Link href="/services/sea-freight">Sea Freight</Link></li>
-                                <li><Link href="/services/land-freight">Land Freight</Link></li>
+                                <li><Link href="/services/road-freight">Road Freight</Link></li>
+                                <li><Link href="/services/rail-freight">Rail Freight</Link></li>
+                                <li><Link href="/services/warehousing">Warehousing</Link></li>
                                 <li><Link href="/services/value-added">Value Added Services</Link></li>
                             </ul>
                         </div>

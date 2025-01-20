@@ -51,14 +51,6 @@ const Service = () => {
         "Expert logistics management for complex and large-scale projects.",
       image: "https://loremflickr.com/400/300/?random=6",
     },
-    {
-      id: 7,
-      href: "",
-      title: "Value Added Services",
-      description:
-        "Expert logistics management for complex and large-scale projects.",
-      image: "https://loremflickr.com/400/300/?random=7",
-    },
   ];
 
   return (
