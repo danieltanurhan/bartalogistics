@@ -11,18 +11,6 @@
     background-repeat: no-repeat;
 }
 
-.what-different .section-header {
-  display: flex;
-  justify-content: center;
-  padding-inline: 80px;
-
-}
-
-.what-different .section-header-extra-content {
-  max-width: 1px;
-  width: 100%;
-}
-
 .mission-section {
   padding: 60px 0;
   background-color: var(--bg-white);
@@ -56,6 +44,20 @@
   margin-top: 1.5rem;
 }
 
+
+.what-different .section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.what-different .section-header-extra-content {
+  max-width: 1px;
+  width: 100%;
+  
+}
+
 .what-different .section-header h2 {
   font-size: 30px;
   color: var(--text-primary);
@@ -78,6 +80,10 @@
 
   .mission-image img {
     max-width: 500px;
+  }
+
+  .what-different .section-header-extra-content {
+    max-width: 50px;
   }
 
 }
