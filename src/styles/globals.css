@@ -134,7 +134,7 @@ header {
 
 /* About Section */
 .about-section {
-  padding: 60px 0;
+  padding: 60px 20px;
   background-color: var(--bg-light);
   display: flex;
   justify-content: center;

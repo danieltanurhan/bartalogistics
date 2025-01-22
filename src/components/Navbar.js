@@ -12,7 +12,7 @@ const servicesLinks = [
   { href: '/services/sea-freight', text: 'Sea Freight' },
   { href: '/services/road-freight', text: 'Road Freight' },
   { href: '/services/rail-freight', text: 'Rail Freight' },
-  { href: '/services/land-freight', text: 'Warehousing' },
+  { href: '/services/warehousing', text: 'Warehousing' },
   { href: '/services/value-added', text: 'Value Added Services' }
 ];
 
