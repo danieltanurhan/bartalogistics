@@ -9,28 +9,28 @@ import { useContext } from 'react';
 
 const differenceItems = [
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Know How",
     description: "With three decades of industry expertise, our seasoned professionals navigate complex logistics challenges with precision and insight, ensuring optimal solutions for every situation."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Global Network",
     description: "Our extensive worldwide network enables us to provide seamless logistics solutions across continents, connecting businesses to opportunities around the globe."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Customized Solutions",
     description: "We understand that every business is unique. That's why we offer tailored logistics solutions to meet your specific needs, ensuring efficiency and cost-effectiveness."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Reliability",
     description: "Count on us for consistent, dependable service. Our commitment to reliability means your cargo is in safe hands from pickup to delivery, every time."
   }
 ];
 
-const AirFreight = () => {
+const RailFreight = () => {
   const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
   const onQuoteClick = () => {
     setIsQuoteFormOpen(true);
@@ -41,8 +41,8 @@ const AirFreight = () => {
       <div className="home-intro">
         <div className="home-content-container">
           <div className="home-intro-content">
-            <h1>Air Freight</h1>
-            <p>Delivering Excellence, Tailored to You</p>
+            <h1>Rail Freight</h1>
+            <p>Sustainable Transport, Maximum Efficiency</p>
           </div>
         </div>
       </div>
@@ -50,28 +50,25 @@ const AirFreight = () => {
         <div className="about-container">
           <div className="about-content home-content-container">
             <div className="about-text">
-              <h2>Air Freight<span className="title-underline"></span></h2>
+              <h2>Rail Freight<span className="title-underline"></span></h2>
               <p>
-                Air freight represents the pinnacle of speed and reliability 
-                 in global logistics, offering swift transportation solutions 
-                  for time-critical shipments. At Barta Logistics, we leverage 
-                   our extensive network of trusted airline partnerships to 
-                   provide comprehensive air cargo services worldwide.
+                Rail freight represents a sustainable and efficient solution for long-distance 
+                cargo transportation, offering significant advantages in bulk shipping and 
+                environmental impact. At Barta Logistics, we leverage extensive rail networks 
+                and partnerships to provide comprehensive continental transport solutions.
               </p>
               <p>
-                From express deliveries and chartered solutions to specialized 
-                handling of perishables and valuable cargo, our expert team 
-                ensures maximum efficiency in every shipment. Our comprehensive 
-                services are backed by real-time tracking capabilities and dedicated 
-                customer support, providing complete visibility and peace of mind.
+                Our rail freight services combine cost-effectiveness with reliability, 
+                particularly for high-volume shipments and long-distance routes. We offer 
+                intermodal solutions that integrate seamlessly with other transportation 
+                methods, ensuring efficient door-to-door delivery.
               </p>
               <p>
-                With decades of industry experience, we have built a reputation for 
-                excellence in connecting businesses across continents. Our commitment 
-                to precision, safety, and reliability has made us a trusted partner for 
-                companies seeking seamless global logistics solutions. Whether you require 
-                regular scheduled services or customized shipping solutions, our team stands 
-                ready to exceed your expectations.
+                With our established relationships with major rail operators and years of 
+                experience, we optimize your supply chain through strategic rail transport 
+                solutions. Our commitment to sustainability and efficiency makes rail freight 
+                an ideal choice for environmentally conscious businesses seeking reliable 
+                logistics solutions.
               </p>
               <button className="about-button" onClick={onQuoteClick}>
               REQUEST A QUOTE
@@ -79,8 +76,8 @@ const AirFreight = () => {
             </div>
             <div className="about-image">
               <img
-                src="/images/air-freight/plane-loading(2).jpg"
-                alt="Air Freight"
+                src="/images/services/plane-loading(2).jpg"
+                alt="Rail Freight"
               />
             </div>
           </div>
@@ -102,6 +99,12 @@ const AirFreight = () => {
             <div className="services-board-grid">
               {differenceItems.map((item, index) => (
                 <div key={index} className="services-board-item">
+                  {/* <div
+                    className="services-board-image"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  >
+                    <p> yo </p>
+                  </div> */}
                   <div className="services-board-image">
                     <img src={item.image} alt="Air Freight" />
                   </div>
@@ -121,4 +124,4 @@ const AirFreight = () => {
   )
 };
 
-export default AirFreight;
+export default RailFreight;

@@ -9,22 +9,22 @@ import { useContext } from 'react';
 
 const differenceItems = [
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Know How",
     description: "With three decades of industry expertise, our seasoned professionals navigate complex logistics challenges with precision and insight, ensuring optimal solutions for every situation."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Global Network",
     description: "Our extensive worldwide network enables us to provide seamless logistics solutions across continents, connecting businesses to opportunities around the globe."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Customized Solutions",
     description: "We understand that every business is unique. That's why we offer tailored logistics solutions to meet your specific needs, ensuring efficiency and cost-effectiveness."
   },
   {
-    image: "/images/air-freight/plane-front.jpg",
+    image: "/images/services/plane-front.jpg",
     title: "Reliability",
     description: "Count on us for consistent, dependable service. Our commitment to reliability means your cargo is in safe hands from pickup to delivery, every time."
   }
@@ -79,7 +79,7 @@ const AirFreight = () => {
             </div>
             <div className="about-image">
               <img
-                src="/images/air-freight/plane-loading(2).jpg"
+                src="/images/services/plane-loading(2).jpg"
                 alt="Air Freight"
               />
             </div>
