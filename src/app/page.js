@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
       <div className="about-section">
-        <div className="home-content-container">
+        <div className="about-container">
           <div className="about-content">
             <div className="about-text">
               <h1>About Us</h1>

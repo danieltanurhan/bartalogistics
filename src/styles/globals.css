@@ -503,15 +503,19 @@ header {
 /* Responsive Breakpoints for All Sections */
 @media screen and (min-width: 768px) {
   /* About Section */
+  .about-image img {
+    max-width: 600px;
+    max-height: 600px;
+  }
 
   .about-text {
-    max-width: 400px;
+    max-width: 600px;
     min-width: 300px;
   }
-  .about-content {
+  /* .about-content {
     flex-direction: row;
     align-items: center;
-  }
+  } */
 
   .about-text {
     flex: 1;
@@ -521,17 +525,13 @@ header {
     font-size: 2.5rem;
   }
 
-  .about-image img {
-    max-width: 500px;
-  }
-
   /* Section Between Section */
   .section-header-content {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 2rem;
     align-items: start;
-    max-width: 1250px;
+    /* max-width: 1250px; */
   }
 
   .section-header h2 {
@@ -571,9 +571,20 @@ header {
   }
 }
 
+@media (min-width: 900px) {
+  .about-content {
+    flex-direction: column;
+  }
+}
+
 /* Desktop */
 @media screen and (min-width: 1024px) {
   /* About Section */
+
+  .about-content {
+    flex-direction: row;
+  }
+
   .about-text {
     max-width: 500px;
   }
@@ -617,6 +628,18 @@ header {
   .services-grid {
     justify-self: center;
     max-width: 1440px;
+  }
+
+  .section-header {
+    min-width: 1460px;
+    max-width: 1920px;
+    padding-inline: 80px;
+    justify-self: center;
+  }
+
+  .section-header-content {
+    /* max-width: 1920px; */
+    justify-content: space-evenly;
   }
 
   .info-board-grid {

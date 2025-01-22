@@ -73,7 +73,7 @@ const Service = () => {
             {serviceList.map((ele, index) => (
               <Link
                 key={index}
-                href="/services/international-moving"
+                href="/services/air-freight"
                 className="service-card"
               >
                 <div  className="wrapper">

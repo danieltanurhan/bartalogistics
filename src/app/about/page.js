@@ -66,7 +66,7 @@ export default function AboutUs() {
             </div>
             <div className="about-image">
               <img
-                src="/images/homepage-aboutus.jpg"
+                src="/images/air-freight/plane-trail-sky.jpg"
                 alt="About Our Logistics Services"
               />
             </div>
@@ -91,8 +91,8 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="what-different">
-        <div className="what-different-container home-content-container">
+      <div className="sections-section">
+        <div className="home-content-container">
           <div className="section-header">
             <div className="section-header-content">
               <h2>What Makes Us Different<span className="title-underline"></span></h2>
