@@ -21,6 +21,7 @@ export default function Footer() {
                                 <li><Link href="/about">About Us</Link></li>
                                 <li><Link href="/blog">Blog</Link></li>
                                 <li><Link href="/contact">Contact Us</Link></li>
+                                <li><Link href="/cbm-calculator">CBM Calculator</Link></li>
                             </ul>
                         </div>
 

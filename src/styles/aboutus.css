@@ -1,9 +1,9 @@
-.home-intro {
+.about-home-intro {
     position: relative; 
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 43vh;
+    height: 42vh;
     margin-top: 0;
     background-image: url('/images/international-moving-bg.jpg');
     background-size: half;

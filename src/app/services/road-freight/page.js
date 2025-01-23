@@ -38,7 +38,7 @@ const RoadFreight = () => {
 
   return (
     <div>
-      <div className="home-intro">
+      <div className="about-home-intro">
         <div className="home-content-container">
           <div className="home-intro-content">
             <h1>Road Freight</h1>
