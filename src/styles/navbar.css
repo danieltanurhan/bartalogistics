@@ -216,7 +216,7 @@
 }
 
 /* Tablet styles */
-@media (min-width: 825px) {
+@media (min-width: 925px) {
   .navbar {
     padding: 1rem 0;
   }

@@ -512,10 +512,10 @@ header {
     max-width: 600px;
     min-width: 300px;
   }
-  /* .about-content {
+  .about-content {
     flex-direction: row;
     align-items: center;
-  } */
+  }
 
   .about-text {
     flex: 1;

@@ -1,18 +1,8 @@
-"use client";
-
-import { QuoteFormContext } from '@/components/QuoteFormContext.js';
 import '@/styles/services-pages.css'
 import '@/styles/aboutus.css'
 import '@/styles/globals.css'
-import { Lightbulb, Truck, Globe, ShieldCheck } from 'lucide-react';
-import { useContext } from 'react';
 
 const Warehousing = () => {
-  const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
-  const onQuoteClick = () => {
-    setIsQuoteFormOpen(true);
-  };
-
   return (
     <div>
       <div className="home-intro">

@@ -69,6 +69,7 @@ const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
                 </ul>
               </li>
               <li><Link href="/blog">BLOG</Link></li>
+              <li><Link href="/contact">CONTACT US</Link></li>
             </ul>
           </div>
           <div className="navbar-right">
@@ -118,6 +119,7 @@ const SidebarMain = ({ onShowServices, onClose }) => (
         </button>
       </li>
       <li><Link href="/blog" onClick={onClose}>BLOG</Link></li>
+      <li><Link href="/contact" onClick={onClose}>CONTACT US</Link></li>
     </ul>
   </div>
 );
