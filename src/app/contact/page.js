@@ -1,9 +1,55 @@
+"use client";
+
+import { useState } from 'react';
+
 import '@/styles/services-pages.css'
 import '@/styles/aboutus.css'
 import '@/styles/globals.css'
 import '@/styles/contact.css'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    location: '',
+    companyName: '',
+    service: '',
+    message: '',
+  });
+
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus('Sending...');
+
+    try {
+      const response = await fetch('/api/submit-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('Message sent successfully!');
+        setFormData({
+          name: '', email: '', phone: '', 
+          location: '', companyName: '', 
+          service: '', message: ''
+        });
+      } else {
+        setSubmitStatus('Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('Error sending message');
+      console.error(error);
+    }
+  };
   return (
     <div>
       <div className="about-home-intro">
@@ -19,20 +65,60 @@ const Contact = () => {
           <div className="about-content home-content-container">
             <div className="about-text warehousing-text contact-text">
               <h2>Contact us directly below by providing the required information<span className="title-underline"></span></h2>
-              <form className="quote-form">
+              <form className="quote-form" onSubmit={handleSubmit}>
                 <div className="form-row">
-                  <input type="text" placeholder="Name" required />
-                  <input type="tel" placeholder="Phone" required />
+                  <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Name" 
+                    value={formData.name}
+                    onChange={handleChange}
+                    required 
+                  />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="Phone" 
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 
                 <div className="form-row">
-                  <input type="email" placeholder="Email" required />
-                  <input type="text" placeholder="Location" required />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Email" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
+                  />
+                  <input 
+                    type="text" 
+                    name="location"
+                    placeholder="Location" 
+                    value={formData.location}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 
                 <div className="form-row">
-                  <input type="text" placeholder="Company Name" required />
-                  <select required>
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    placeholder="Company Name" 
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    required 
+                  />
+                  <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                  >
                     <option value="">Services</option>
                     <option value="international-moving">International Moving</option>
                     <option value="air-freight">Air Freight</option>
@@ -44,12 +130,19 @@ const Contact = () => {
                   </select>
                 </div>
                 
-                <textarea placeholder="Requirement" required></textarea>
+                <textarea 
+                  name="message"
+                  placeholder="Requirement" 
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+                
+                {submitStatus && <div>{submitStatus}</div>}
                 
                 <button type="submit" className="submit-button">SUBMIT</button>
               </form>
             </div>
-            
           </div>
         </div>
       </div>

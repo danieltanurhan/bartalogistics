@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FaHandHoldingMedical, FaCar, FaMicrochip, FaShoppingCart, FaShieldAlt, FaFlask, FaHotel, FaOilCan } from "react-icons/fa";
 
 const Industries = () => {
+
+  // Industries List, Automative, Technology, Consumer Goods and Retail, Relief Cargo Movement and Defense, Chemicals, Perishables, Antique and Arts, Fair and Events
   const industryList = [
     {
       icon: <FaHandHoldingMedical />,

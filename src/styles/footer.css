@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400&display=swap');
 
 .footer {
-    background-color: #007A78;
+    background-color: #1A1A1A; /*#007A78 */
     color: white;
     font-family: 'Sarabun', sans-serif;
     padding-inline: 40px;
