@@ -7,44 +7,52 @@ const Industries = () => {
   // Industries List, Automative, Technology, Consumer Goods and Retail, Relief Cargo Movement and Defense, Chemicals, Perishables, Antique and Arts, Fair and Events
   const industryList = [
     {
-      icon: <FaHandHoldingMedical />,
-      title: "Healthcare",
-      image: "https://loremflickr.com/400/300/?random=2",
-    },
-    {
       icon: <FaCar />,
+      href: "/industries/automotive",
       title: "Automotive",
       image: "https://loremflickr.com/400/300/?random=2",
     },
     {
       icon: <FaMicrochip />,
+      href: "/industries/technology",
       title: "Technology",
       image: "https://loremflickr.com/400/300/?random=3",
     },
     {
       icon: <FaShoppingCart />,
+      href: "/industries/consumer-goods-and-retail",
       title: "Consumer Goods & Retail",
       image: "https://loremflickr.com/400/300/?random=4",
     },
     {
       icon: <FaShieldAlt />,
+      href: "/industries/relief-cargo-movement-and-defense",
       title: "Relief Cargo Movement & Defense",
       image: "https://loremflickr.com/400/300/?random=5",
     },
     {
       icon: <FaFlask />,
+      href: "/industries/chemicals",
       title: "Chemicals",
       image: "https://loremflickr.com/400/300/?random=6",
     },
     {
       icon: <FaHotel />,
-      title: "Hospitality",
+      href: "/industries/perishables",
+      title: "Perishables",
       image: "https://loremflickr.com/400/300/?random=7",
     },
     {
       icon: <FaOilCan />,
-      title: "Oil and Gas",
+      href: "/industries/antique-and-arts",
+      title: "Antique and Arts",
       image: "https://loremflickr.com/400/300/?random=8",
+    },
+    {
+      icon: <FaHandHoldingMedical />,
+      href: "/industries/fair-and-events",
+      title: "Fair and Events",
+      image: "https://loremflickr.com/400/300/?random=1",
     },
   ];
 
@@ -66,7 +74,12 @@ const Industries = () => {
           </div>
           <div className="industries-grid">
             {industryList.map((industry, index) => (
-              <div key={index} className="industry-card">
+              <Link
+                key={index} 
+                href={industry.href} 
+                className="industry-card"
+                style={{textDecoration: 'none'}}
+              >
                 <div
                   className="industry-image"
                   style={{ backgroundImage: `url(${industry.image})` }}
@@ -76,7 +89,7 @@ const Industries = () => {
                   </div>
                 </div>
                 <h3>{industry.title}</h3>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

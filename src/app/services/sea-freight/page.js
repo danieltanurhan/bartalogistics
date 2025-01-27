@@ -113,6 +113,24 @@ const SeaFreight = () => {
           </div>
         </div>
       </div>
+      <div className="footer-cbm-section">
+        <div className="home-content-container">
+          <div className="footer-cbm-content">
+              <div className="footer-cbm-text">
+                <h2>CBM Calculator<span className="title-underline"></span></h2>
+                <p>
+                  Calculate the CBM of your cargo and get an accurate estimate of
+                  its volume and weight.
+                </p>
+              </div>
+              <div className="footer-cbm-button">
+                <button className="about-button" onClick={onQuoteClick}>
+                  Calculate CBM
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 };

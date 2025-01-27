@@ -47,33 +47,42 @@
     align-items: start;
 }
 
-.footer-section ul {
+.footer-mid-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
     margin-right: 4rem;
 }
 
-.footer-section ul p {
+.footer-mid-links ul:last-child {
+    margin-right: 0;
+}
+
+.footer-mid-links ul li:first-child {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-mid-links ul p {
     margin-top: 0;
     margin-bottom: 0.75rem;
     text-align: left;
     font-weight: 700;
 }
 
-.footer-section ul li {
+.footer-mid-links ul li {
     margin-bottom: 0.75rem;
     text-align: left;
 }
 
-.footer-section ul li a {
+.footer-mid-links ul li a {
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
+.footer-mid-links ul li a:hover {
     color: #e5e7eb;
 }
 
@@ -114,11 +123,11 @@
         margin-bottom: 2em;
     }
 
-    .footer-section:last-child {
+    .footer-mid-links:last-child {
         align-self: end;
     }
 
-    .footer-section ul p {
+    .footer-mid-links ul p {
         margin-top: 0.5rem;
     }
 }

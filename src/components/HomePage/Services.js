@@ -5,7 +5,7 @@ const Service = () => {
   const serviceList = [
     {
       id: 1,
-      href: "",
+      href: "/services/international-moving",
       title: "International Moving",
       description:
         "Efficient and reliable global freight solutions tailored to your business needs.",
@@ -13,7 +13,7 @@ const Service = () => {
     },
     {
       id: 2,
-      href: "",
+      href: "/services/air-freight",
       title: "Air Freight",
       description:
         "State-of-the-art warehouse facilities to streamline your storage requirements.",
@@ -21,7 +21,7 @@ const Service = () => {
     },
     {
       id: 3,
-      href: "",
+      href: "/services/sea-freight",
       title: "Sea Freight",
       description:
         "Simplify customs clearance with our experienced team of brokers.",
@@ -29,7 +29,7 @@ const Service = () => {
     },
     {
       id: 4,
-      href: "",
+      href: "/services/road-freight",
       title: "Road Freight",
       description:
         "Optimize your supply chain for maximum efficiency and cost savings.",
@@ -37,7 +37,7 @@ const Service = () => {
     },
     {
       id: 5,
-      href: "",
+      href: "/services/rail-freight",
       title: "Rail Freight",
       description:
         "Comprehensive solutions for fast and accurate order fulfillment.",
@@ -45,7 +45,7 @@ const Service = () => {
     },
     {
       id: 6,
-      href: "",
+      href: "/services/warehousing",
       title: "Warehousing",
       description:
         "Expert logistics management for complex and large-scale projects.",
@@ -73,7 +73,7 @@ const Service = () => {
             {serviceList.map((ele, index) => (
               <Link
                 key={index}
-                href="/services/air-freight"
+                href={ele.href}
                 className="service-card"
               >
                 <div  className="wrapper">

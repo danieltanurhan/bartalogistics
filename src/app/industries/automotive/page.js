@@ -7,61 +7,31 @@ import '@/styles/aboutus.css'
 import '@/styles/globals.css'
 import { useContext } from 'react';
 
-const industrySolutionsItems = [
-  {
-    text: "Pre-Clearance with the customs to avoid delays for 'just in time' delivery requirements."
-  },
-  {
-    text: "Storage and distribution facility in JAFZA."
-  },
-  {
-    text: "Efficient inventory management system with online visibility to our customers."
-  },
-  {
-    text: "Pick and pack, kitting, repacking, labelling for distribution of spare parts."
-  },
-  {
-    text: "Consultation for documentation solutions to meet consignor and consignee demands."
-  },
-  {
-    text: "Transport solutions via air/sea freight for vehicles and spare parts to meet the lead time requirements."
-  },
-  {
-    text: "Open yard for automobile storage."
-  },
-  {
-    text: "Clearing of vehicles and forwarding."
-  },
-  {
-    text: "Accessory fittings of automobiles."
-  },
-  {
-    text: "Part storage and distribution."
-  },
-  {
-    text: "Reworking – Load and Export."
-  },
-  {
-    text: "Vehicle lashing – Load and secure."
-  },
-  {
-    text: "Customs Inspection."
-  }
-];
-
-
 const Automotive = () => {
   const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
   const onQuoteClick = () => {
     setIsQuoteFormOpen(true);
   };
 
+  const industrySolutionsItems = [
+    { text: "Just-in-time delivery for automotive manufacturing" }, 
+    { text: "Specialized handling of automotive parts and components" }, 
+    { text: "Supply chain solutions for OEM manufacturers" }, 
+    { text: "Vehicle transportation and distribution services" }, 
+    { text: "Warehouse management for automotive spare parts" }, 
+    { text: "Cross-border automotive logistics solutions" }, 
+    { text: "Quality control and inspection services" }, 
+    { text: "Aftermarket parts distribution networks" }, 
+    { text: "Time-critical delivery for production line supplies" }, 
+    { text: "Customs clearance for automotive imports and exports" }
+   ];
+
   return (
     <div>
       <div className="about-home-intro">
         <div className="home-content-container">
           <div className="home-intro-content">
-            <h1>Automotive</h1>
+            <h1>Automotive Industry Logistics</h1>
             <p>Delivering Excellence, Tailored to You</p>
           </div>
         </div>
@@ -72,26 +42,25 @@ const Automotive = () => {
             <div className="about-text">
               <h2>Automotive<span className="title-underline"></span></h2>
               <p>
-                Automotive represents the pinnacle of speed and reliability 
-                 in global logistics, offering swift transportation solutions 
-                  for time-critical shipments. At Barta Logistics, we leverage 
-                   our extensive network of trusted airline partnerships to 
-                   provide comprehensive air cargo services worldwide.
+                The automotive industry demands precision, reliability, and seamless 
+                coordination across complex supply chains. At Barta Logistics, we 
+                deliver specialized logistics solutions that keep production lines 
+                running and vehicles moving from assembly to dealership efficiently.
               </p>
               <p>
-                From express deliveries and chartered solutions to specialized 
-                handling of perishables and valuable cargo, our expert team 
-                ensures maximum efficiency in every shipment. Our comprehensive 
-                services are backed by real-time tracking capabilities and dedicated 
-                customer support, providing complete visibility and peace of mind.
+                Our comprehensive automotive logistics services encompass everything 
+                from just-in-time delivery for manufacturing to global distribution 
+                of finished vehicles and spare parts. We understand the critical nature 
+                of automotive supply chains and provide tailored solutions that minimize 
+                delays and optimize costs while maintaining the highest quality standards.
               </p>
               <p>
-                With decades of industry experience, we have built a reputation for 
-                excellence in connecting businesses across continents. Our commitment 
-                to precision, safety, and reliability has made us a trusted partner for 
-                companies seeking seamless global logistics solutions. Whether you require 
-                regular scheduled services or customized shipping solutions, our team stands 
-                ready to exceed your expectations.
+                With years of experience serving major automotive manufacturers and suppliers, 
+                we've developed sophisticated systems to handle the unique challenges of 
+                automotive logistics. Our expertise extends from managing inbound components 
+                for production to coordinating aftermarket parts distribution, ensuring your 
+                automotive supply chain operates at peak efficiency regardless of scale or 
+                complexity.
               </p>
               <button className="about-button" onClick={onQuoteClick}>
               REQUEST A QUOTE

@@ -71,7 +71,7 @@ const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
             <ul className="navbar-nav-desktop">
               <li><Link href="/about">ABOUT US</Link></li>
               <li className="services-dropdown">
-                <Link href="#" className="navbar-link" cursor="pointer">SERVICES</Link>
+                <a className="navbar-link" style={{ cursor: 'default' }}>SERVICES</a>
                 <ul className="dropdown-menu">
                   {servicesLinks.map((service) => (
                     <li key={service.href}>
@@ -81,7 +81,7 @@ const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
                 </ul>
               </li>
               <li className="services-dropdown">
-                <Link href="#" className="navbar-link" cursor="pointer">INDUSTRIES</Link>
+                <a className="navbar-link" style={{ cursor: 'default' }}>INDUSTRIES</a>
                 <ul className="dropdown-menu">
                   {industriesLinks.map((industry) => (
                     <li key={industry.href}>

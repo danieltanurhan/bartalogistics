@@ -102,12 +102,6 @@ const AirFreight = () => {
             <div className="services-board-grid">
               {differenceItems.map((item, index) => (
                 <div key={index} className="services-board-item">
-                  {/* <div
-                    className="services-board-image"
-                    style={{ backgroundImage: `url(${item.image})` }}
-                  >
-                    <p> yo </p>
-                  </div> */}
                   <div className="services-board-image">
                     <img src={item.image} alt="Air Freight" />
                   </div>
