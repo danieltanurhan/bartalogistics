@@ -71,13 +71,17 @@
     z-index: -1;
   }
 
+.home-content-container-cbm {
+    padding-inline: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 .footer-cbm-content {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 1920px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
     gap: 1rem;
 }
 
@@ -94,9 +98,10 @@
         grid-template-columns: repeat(2, 2fr);
     }
 
-    /* .warehousing-text {
-        max-width: 1024px;
-    } */
+    .footer-cbm-content {
+        flex-direction: row;
+        align-items: center;
+    }
   }
 
 @media  (min-width: 1024px) {

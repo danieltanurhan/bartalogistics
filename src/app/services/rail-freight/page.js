@@ -121,7 +121,7 @@ const RailFreight = () => {
         </div>
       </div>
       <div className="footer-cbm-section">
-        <div className="home-content-container">
+        <div className="home-content-container-cbm">
           <div className="footer-cbm-content">
               <div className="footer-cbm-text">
                 <h2>CBM Calculator<span className="title-underline"></span></h2>
