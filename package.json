@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && cd src/cms && sanity build && mkdir ..\\..\\public\\studio 2>nul & xcopy /E /I /Y dist ..\\..\\public\\studio",
+    "build": "next build && cd src/cms && sanity build && cd ../.. && mkdir -p public/studio && cp -r src/cms/dist/* public/studio/",
     "start": "next start",
-    "lint": "next lint",
-    "sanity": "cd src/cms && sanity dev",
-    "dev:all": "concurrently \"npm run dev\" \"npm run sanity\""
+    "lint": "next lint"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.0",

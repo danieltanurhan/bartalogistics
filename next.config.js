@@ -15,9 +15,10 @@ const nextConfig = {
           {
             source: '/studio/:path*',
             destination: '/studio/:path*'
-          }
+          },
         ]
-      }
+      },
+      output: 'standalone',
 }
 
 module.exports = nextConfig
