@@ -18,6 +18,7 @@ const nextConfig = {
           },
         ]
       },
+      transpilePackages: ['@sanity/vision'],
       output: 'standalone',
 }
 
