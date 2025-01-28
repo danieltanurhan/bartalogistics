@@ -1,4 +1,7 @@
+'use client';
+
 import '../styles/globals.css'
+import { usePathname } from 'next/navigation';
 import Footer from '@/components/Footer';
 import Navbar from "@/components/Navbar";
 import { QuoteFormProvider } from '@/components/QuoteFormContext';
