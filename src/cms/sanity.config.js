@@ -6,12 +6,10 @@ import {schemaTypes} from './schemaTypes'
 export default defineConfig({
   name: 'default',
   title: 'BartaLogistics',
-
   projectId: 'ctf80kdy',
   dataset: 'production',
-
+  basePath: '/studio', // Add this line
   plugins: [structureTool(), visionTool()],
-
   schema: {
     types: schemaTypes,
   },

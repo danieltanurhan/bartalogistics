@@ -10,6 +10,14 @@ const nextConfig = {
           },
         ],
       },
+      async rewrites() {
+        return [
+          {
+            source: '/studio/:path*',
+            destination: '/cms/studio/:path*',
+          },
+        ]
+      },
 }
 
 module.exports = nextConfig
