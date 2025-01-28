@@ -73,13 +73,6 @@ export default function BlogPost() {
 
   return (
     <>
-      <div className="about-home-intro">
-        <div className="home-content-container">
-          <div className="home-intro-content">
-            <h1>Blog</h1>
-          </div>
-        </div>
-      </div>
       <div className="blog-section">
         <div className="home-content-container">
           <div className="blog-content-container">
