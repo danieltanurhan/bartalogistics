@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useParams,useSearchParams, useRouter } from 'next/navigation'
 import { blogService } from '@/services/blogService'
 import { client } from '@/lib/sanity'
@@ -89,23 +89,25 @@ export default function BlogPost() {
                   <LoadingState />
                 ) : (
                   <>
-                    {post && (
-                      <article className="blog-post">
-                        <h1>{post.title}</h1>
-                        <div className="post-meta">
-                          <span>{new Date(post._createdAt).toLocaleDateString()}</span>
-                          {post.author && <span>By {post.author}</span>}
-                        </div>
-                        {post.mainImage && (
-                          <div className="post-image">
-                            <img src={urlForImage(post.mainImage)} alt={post.title} />
+                    <Suspense fallback={<LoadingState />}>
+                      {post && (
+                        <article className="blog-post">
+                          <h1>{post.title}</h1>
+                          <div className="post-meta">
+                            <span>{new Date(post._createdAt).toLocaleDateString()}</span>
+                            {post.author && <span>By {post.author}</span>}
                           </div>
-                        )}
-                        <div className="post-content">
-                          <PortableText value={post.body} />
-                        </div>
-                      </article>
-                    )}
+                          {post.mainImage && (
+                            <div className="post-image">
+                              <img src={urlForImage(post.mainImage)} alt={post.title} />
+                            </div>
+                          )}
+                          <div className="post-content">
+                            <PortableText value={post.body} />
+                          </div>
+                        </article>
+                      )}
+                    </Suspense>
                   </>
                 )}
               </ErrorBoundary>
