@@ -1,7 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
     "rewrites": [
-      { "source": "/studio/(.*)", "destination": "/studio/$1" }
+      {
+        "source": "/studio/:match*",
+        "destination": "/studio/index.html"
+      }
     ]
   }

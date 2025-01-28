@@ -4,26 +4,36 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && cd src/cms && sanity build && cd ../.. && mkdir -p public/studio && cp -r src/cms/dist/* public/studio/",
+    "build": "next build && cd src/sanity && npx sanity build studio && cd ../.. && cp -r src/sanity/studio/* public/studio/",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.0",
+    "@sanity/cli": "^3.71.2",
     "@sanity/client": "^6.27.1",
+    "@sanity/icons": "^3.5.7",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.72.0",
     "@sendgrid/mail": "^8.1.4",
     "eslint-plugin-next": "^0.0.0",
     "groq": "^3.71.2",
     "lucide-react": "^0.471.0",
     "next": "15.1.4",
-    "next-sanity": "^9.8.43",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "next-sanity": "^9.8.45",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
+    "react-icons": "^5.4.0",
+    "sanity": "^3.72.0",
+    "styled-components": "^6.1.14"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   }
 }

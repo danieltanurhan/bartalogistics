@@ -42,3 +42,5 @@ next-env.d.ts
 
 dist/
 public/studio/
+.sanity
+cms-trash--

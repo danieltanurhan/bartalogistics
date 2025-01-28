@@ -1,25 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['cdn.sanity.io'],
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'cdn.sanity.io',
-            pathname: '/**',
-          },
-        ],
+  images: {
+    domains: ['cdn.sanity.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/**',
       },
-      async rewrites() {
-        return [
-          {
-            source: '/studio/:path*',
-            destination: '/studio/:path*'
-          },
-        ]
-      },
-      transpilePackages: ['@sanity/vision'],
-      output: 'standalone',
+    ],
+  },
+  output: 'standalone',
 }
 
 module.exports = nextConfig
