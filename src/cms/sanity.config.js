@@ -1,6 +1,6 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '../src/cms/node_modules/@sanity/vision'
+import {visionTool} from '../node_modules/@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
