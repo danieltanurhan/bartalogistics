@@ -8,7 +8,6 @@ export default defineConfig({
   title: 'BartaLogistics',
   projectId: 'ctf80kdy',
   dataset: 'production',
-  basePath: '/studio', // Add this line
   plugins: [structureTool(), visionTool()],
   schema: {
     types: schemaTypes,

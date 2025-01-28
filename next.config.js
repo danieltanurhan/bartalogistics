@@ -14,10 +14,10 @@ const nextConfig = {
         return [
           {
             source: '/studio/:path*',
-            destination: '/cms/studio/:path*',
-          },
+            destination: '/studio/:path*'
+          }
         ]
-      },
+      }
 }
 
 module.exports = nextConfig
