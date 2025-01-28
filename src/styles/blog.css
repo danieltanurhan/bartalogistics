@@ -41,10 +41,12 @@
 
 .blog-image img{
     width: 100%;
+    max-width: 500px;
+    max-height: 400px;
 }
 
 .blog-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 700;
     /* color: var(--secondary-color); */
     margin-bottom: 0.1rem;
@@ -112,6 +114,95 @@
     margin-bottom: 0.5rem;
 }
 
+/* Add to your existing blog.css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+.pagination .read-button.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.blog-recent-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-recent-date {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.blog-recent-title {
+    font-weight: 600;
+}
+
+.skeleton {
+background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.error-container {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+  
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.error-content h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+  
+.error-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.blog-post {
+
+}
+
+.post-image img {
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    gap: 2em;
+    max-width: 700px;
+}
+
+
+
 /* Media query for tablet and up */
 @media (min-width: 768px) {
     .blog-content-container {
@@ -146,7 +237,7 @@
 @media (min-width: 1440px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);   
-        max-width: 1920px;   
+        max-width: 1440px;   
     }
 
     .blog-item {
