@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import { QuoteFormProvider } from '@/components/QuoteFormContext';
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isStudioRoute = pathname?.startsWith('/studio');
+
   return (
     <html lang="en">
       <head>
@@ -12,11 +15,14 @@ export default function RootLayout({ children }) {
       </style>
       </head>
       <body>
-        <QuoteFormProvider>
+        {!isStudioRoute ? (
+          <QuoteFormProvider>
+            <main>{children}</main>
+            <Footer />
+          </QuoteFormProvider>
+        ) : (
           <main>{children}</main>
-          <Footer />
-        </QuoteFormProvider>
-        
+        )}
       </body>
     </html>
   );
