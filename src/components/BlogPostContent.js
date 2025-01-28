@@ -26,7 +26,9 @@ export default function BlogPostContent({ slug }) {
 
  useEffect(() => {
      setIsMounted(true)
-     fetchPost()
+     if (slug) {
+        fetchPost()
+     }
      fetchRecentPosts()
    }, [slug])
  

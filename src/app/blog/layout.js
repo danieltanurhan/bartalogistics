@@ -1,3 +1,5 @@
+import '@/styles/globals.css'
+import '@/styles/aboutus.css'
 export default function BlogLayout({ children }) {
     return (
       <>

@@ -9,6 +9,10 @@ import RecentPosts from '@/components/RecentPosts'
 import Pagination from '@/components/Pagination'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import LoadingState from '@/components/LoadingState'
+import '@/styles/services-pages.css'
+import '@/styles/aboutus.css'
+import '@/styles/globals.css'
+import '@/styles/blog.css'
 
 export default function BlogContent() {
   const searchParams = useSearchParams()
