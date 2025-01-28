@@ -1,4 +1,5 @@
 import BlogContent from '@/components/BlogContent'
+import { Suspense } from 'react'
 
 export default function Blog() {
   return (
