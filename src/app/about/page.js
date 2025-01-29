@@ -5,27 +5,28 @@ import '@/styles/globals.css'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { Lightbulb, Truck, Globe, ShieldCheck } from 'lucide-react';
 import '@/styles/globals.css';
+import { RiShieldStarLine, RiGlobalLine, RiCustomerService2Line, RiFlightTakeoffLine } from 'react-icons/ri';
 
 const differenceItems = [
   {
-    icon: <Lightbulb size={64} />,
-    title: "Know How",
-    description: "With three decades of industry expertise, our seasoned professionals navigate complex logistics challenges with precision and insight, ensuring optimal solutions for every situation."
-  },
-  {
-    icon: <Truck size={64} />,
+    icon: <RiGlobalLine size={64} className="difference-icon" />,
     title: "Global Network",
-    description: "Our extensive worldwide network enables us to provide seamless logistics solutions across continents, connecting businesses to opportunities around the globe."
+    description: "Strategic partnerships across key markets enable us to provide comprehensive logistics solutions worldwide, ensuring seamless cargo movement across continents."
   },
   {
-    icon: <Globe size={64} />,
-    title: "Customized Solutions",
-    description: "We understand that every business is unique. That's why we offer tailored logistics solutions to meet your specific needs, ensuring efficiency and cost-effectiveness."
+    icon: <RiCustomerService2Line size={64} className="difference-icon" />,
+    title: "Customer-Centric Culture",
+    description: "Our dedicated team focuses on understanding and meeting client needs, providing personalized solutions and superior service at every touchpoint."
   },
   {
-    icon: <ShieldCheck size={64} />,
-    title: "Reliability",
-    description: "Count on us for consistent, dependable service. Our commitment to reliability means your cargo is in safe hands from pickup to delivery, every time."
+    icon: <RiFlightTakeoffLine size={64} className="difference-icon" />,
+    title: "Specialist Solutions",
+    description: "Expertise in handling complex logistics challenges with tailored approaches, leveraging our industry knowledge and innovative methodologies."
+  },
+  {
+    icon: <RiShieldStarLine size={64} className="difference-icon" />,
+    title: "Digital Excellence", 
+    description: "Advanced tracking systems and digital solutions ensure real-time visibility and efficient management of your cargo throughout its journey."
   }
 ];
 
@@ -66,7 +67,7 @@ export default function AboutUs() {
             </div>
             <div className="about-image">
               <img
-                src="/images/air-freight/plane-trail-sky.jpg"
+                src="/images/services/plane-trail-sky.jpg"
                 alt="About Our Logistics Services"
               />
             </div>
@@ -78,20 +79,19 @@ export default function AboutUs() {
           <div className="about-content home-content-container">
             <div className="mission-image">
               <img
-                src="/images/aboutus/mission.png"
+                src="/images/aboutus/mission.jpg"
                 alt="About Our Logistics Services"
               />
             </div>
             <div className="mission-text">
               <h2>Our Mission<span className="title-underline"></span></h2>
               <p>Our mission is to become the leading global logistics provider, delivering exceptional services to our clients.</p>
-              <h2>Our Mission<span className="title-underline"></span></h2>
-              <p>Our mission is to become the leading global logistics provider, delivering exceptional services to our clients.</p>
+              <p>Through innovative solutions, sustainable practices, and unwavering commitment to excellence, we strive to connect businesses worldwide while ensuring reliability, efficiency, and complete customer satisfaction in every shipment we handle.</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="sections-section">
+      <div className="mission-section">
         <div className="home-content-container">
           <div className="section-header">
             <div className="section-header-content">
@@ -102,17 +102,15 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="what-different-content">
-            <div className="info-board-grid">
+            <div className="difference-grid">
               {differenceItems.map((item, index) => (
-                <div key={index} className="info-board-item">
-                  <div className="info-board-icon">
-                    {item.icon}
-                  </div>
-                  <div className="info-board-content">
-                    <div className="info-board-title">{item.title}</div>
-                    <div className="info-board-description">
-                      {item.description}
+                <div key={index} className="difference-item">
+                  <div className="difference-content">
+                    <div className="difference-icon-wrapper">
+                      {item.icon}
                     </div>
+                    <h3 className="difference-title">{item.title}</h3>
+                    <p className="difference-description">{item.description}</p>
                   </div>
                 </div>
               ))}

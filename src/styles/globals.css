@@ -354,8 +354,8 @@ header {
 
 .info-board-item {
   display: flex;
-  flex-direction: row;
-  align-items: left;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
   padding: 20px;
 }
@@ -379,6 +379,7 @@ header {
   font-weight: 700;
   color: var(--secondary-color);
   margin-bottom: 0.1rem;
+  align-self: center;
 }
 
 .info-board-description {
@@ -515,7 +516,7 @@ header {
     min-width: 300px;
   }
   .about-content {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
   }
 

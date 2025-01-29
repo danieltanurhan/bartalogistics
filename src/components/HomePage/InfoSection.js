@@ -1,26 +1,28 @@
 import React from 'react';
 import { Lightbulb, Truck, Globe, ShieldCheck } from 'lucide-react';
 import '@/styles/globals.css';
+import { Scale, Network, Clock, Shield } from 'lucide-react';
+
 const infoItems = [
   {
-    icon: <Lightbulb size={64} />,
-    title: "Know How",
-    description: "With three decades of industry expertise, our seasoned professionals navigate complex logistics challenges with precision and insight, ensuring optimal solutions for every situation."
+    icon: <Scale size={64} />,
+    title: "Proven Track Record",
+    description: "Decades of successful logistics operations worldwide, delivering excellence through experience and continuous innovation in global freight solutions."
   },
   {
-    icon: <Truck size={64} />,
-    title: "Global Network",
-    description: "Our extensive worldwide network enables us to provide seamless logistics solutions across continents, connecting businesses to opportunities around the globe."
+    icon: <Network size={64} />,
+    title: "Worldwide Coverage",
+    description: "Strategic partnerships and established routes across six continents ensure your cargo reaches any destination efficiently and cost-effectively."
   },
   {
-    icon: <Globe size={64} />,
-    title: "Customized Solutions",
-    description: "We understand that every business is unique. That's why we offer tailored logistics solutions to meet your specific needs, ensuring efficiency and cost-effectiveness."
+    icon: <Clock size={64} />,
+    title: "24/7 Support",
+    description: "Round-the-clock customer service and real-time tracking capabilities keep you informed and in control of your shipments at all times."
   },
   {
-    icon: <ShieldCheck size={64} />,
-    title: "Reliability",
-    description: "Count on us for consistent, dependable service. Our commitment to reliability means your cargo is in safe hands from pickup to delivery, every time."
+    icon: <Shield size={64} />,
+    title: "Secure Solutions",
+    description: "Advanced security protocols and certified handling procedures guarantee the safety and integrity of your cargo throughout its journey."
   }
 ];
 
