@@ -12,6 +12,8 @@ import '@/styles/services-pages.css'
 import '@/styles/aboutus.css'
 import '@/styles/globals.css'
 import '@/styles/blog.css'
+import { BsCalendar4 } from 'react-icons/bs'
+import { FaFolder } from 'react-icons/fa'
 
 export default function BlogPostContent({ slug }) {
   // Move all state and handlers from [slug]/page.js here
@@ -70,49 +72,61 @@ export default function BlogPostContent({ slug }) {
    if (!post) return <div>Loading...</div>
  
    return (
-     <>
-       <div className="blog-section">
-         <div className="home-content-container">
-           <div className="blog-content-container">
-             <main className="blog-main">
-               <ErrorBoundary>
-                 {loading ? (
-                   <LoadingState />
-                 ) : (
-                   <>
-                     <Suspense fallback={<LoadingState />}>
-                       {post && (
-                         <article className="blog-post">
-                           <h1>{post.title}</h1>
-                           <div className="post-meta">
-                             <span>{new Date(post._createdAt).toLocaleDateString()}</span>
-                             {post.author && <span>By {post.author}</span>}
-                           </div>
-                           {post.mainImage && (
-                             <div className="post-image">
-                               <img src={urlForImage(post.mainImage)} alt={post.title} />
-                             </div>
-                           )}
-                           <div className="post-content">
-                             <PortableText value={post.body} />
-                           </div>
-                         </article>
-                       )}
-                     </Suspense>
-                   </>
-                 )}
-               </ErrorBoundary>
-             </main>
-             <aside className="blog-nav">
-               <BlogSearch 
-                 initialValue={search} 
-                 onSearch={handleSearch} 
-               />
-               <RecentPosts posts={recentPosts} />
-             </aside>
-           </div>
-         </div>
-       </div>
-     </>
-   )
- }
+    <>
+      <div className="blog-post-home-intro">
+        <div className="home-content-container">
+          <div className="home-intro-content">
+            <div className="blog-post-breadcrumb">
+              <span>Blog</span>
+              <span className="separator">/</span>
+              <span className="current">{post.title}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="blog-section">
+        <div className="home-content-container">
+          <div className="blog-content-container">
+            <main className="blog-main">
+              <ErrorBoundary>
+                <Suspense fallback={<LoadingState />}>
+                  <article className="blog-post">
+                    {post.mainImage && (
+                      <div className="post-image">
+                        <img src={urlForImage(post.mainImage)} alt={post.title} />
+                      </div>
+                    )}
+                    <h1>{post.title}</h1>
+                    <div className="post-meta">
+                      <span className="date">
+                        <BsCalendar4 className="meta-icon" />
+                        {new Date(post._createdAt).toLocaleDateString()}
+                      </span>
+                      {post.categories && post.categories.length > 0 && (
+                        <div className="categories">
+                          <FaFolder className="meta-icon" />
+                          {post.categories.map((category, index) => (
+                            <span key={category._id} className="category">
+                              {category.title}
+                              {index < post.categories.length - 1 ? ', ' : ''}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="post-content">
+                      <PortableText value={post.body} />
+                    </div>
+                  </article>
+                </Suspense>
+              </ErrorBoundary>
+            </main>
+            <aside className="blog-nav">
+              <RecentPosts posts={recentPosts} />
+            </aside>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}

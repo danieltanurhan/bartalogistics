@@ -216,7 +216,7 @@
 }
 
 /* Tablet styles */
-@media (min-width: 925px) {
+@media (min-width: 940px) {
   .navbar {
     padding: 1rem 0;
   }
@@ -254,7 +254,7 @@
   }
 
   .navbar-nav-desktop li {
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
 
   .navbar-nav-desktop a {
@@ -318,5 +318,17 @@
 
   .dropdown-menu a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-nav-desktop li {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navbar-nav-desktop li {
+    margin-left: 2rem;
   }
 }

@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import { BsCalendar4 } from 'react-icons/bs'
+import { FaFolder } from 'react-icons/fa'
 import Link from 'next/link'
 import { urlForImage } from '@/lib/sanity'
 
@@ -12,15 +13,32 @@ export default function BlogGrid({ posts }) {
       {posts.map((post) => (
         <article key={post._id} className="blog-item">
           {post.mainImage && (
-            <div className="blog-image">
-              <img src={urlForImage(post.mainImage)} alt={post.title || 'Blog post image'} />
-            </div>
+            <Link href={`/blog/${post.slug.current}`}>
+              <div className="blog-image">
+                <img src={urlForImage(post.mainImage)} alt={post.title || 'Blog post image'} />
+              </div>
+            </Link>
           )}
           <div className="blog-content">
-            <div className="blog-title">{post.title}</div>
+            <Link href={`/blog/${post.slug.current}`} className="blog-title">
+              <div className="blog-title" title={post.title}>{post.title}</div>
+            </Link>
             <div className="blog-meta">
-              <span>{new Date(post._createdAt).toLocaleDateString()}</span>
-              {post.author && <span>By {post.author}</span>}
+              <span className="date">
+                <BsCalendar4 className="meta-icon" />
+                {new Date(post._createdAt).toLocaleDateString()}
+              </span>
+              {post.categories && post.categories.length > 0 && (
+                <div className="categories">
+                  <FaFolder className="meta-icon" />
+                  {post.categories.map((category, index) => (
+                    <span key={category._id} className="category">
+                      {category.title}
+                      {index < post.categories.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="blog-description">
               {post.description}

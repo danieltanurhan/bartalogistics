@@ -13,6 +13,8 @@ import '@/styles/services-pages.css'
 import '@/styles/aboutus.css'
 import '@/styles/globals.css'
 import '@/styles/blog.css'
+import useWindowSize from '@/hooks/useWindowSize'
+
 
 export default function BlogContent() {
   const searchParams = useSearchParams()
@@ -25,6 +27,9 @@ export default function BlogContent() {
 
   const page = parseInt(searchParams.get('page') || '1')
   const search = searchParams.get('search') || ''
+
+  const { width } = useWindowSize()
+  const isMobile = width < 768
 
   useEffect(() => {
     fetchPosts()
@@ -70,6 +75,13 @@ export default function BlogContent() {
         <div className="blog-content-container">
           <main className="blog-main">
             <ErrorBoundary>
+              {isMobile && (
+                <BlogSearch 
+                  initialValue={search} 
+                  onSearch={handleSearch}
+                  className="mobile-search" 
+                />
+              )}
               {loading ? (
                 <LoadingState />
               ) : (
@@ -83,10 +95,12 @@ export default function BlogContent() {
             </ErrorBoundary>
           </main>
           <aside className="blog-nav">
-            <BlogSearch 
-              initialValue={search} 
-              onSearch={handleSearch} 
-            />
+            {!isMobile && (
+              <BlogSearch 
+                initialValue={search} 
+                onSearch={handleSearch} 
+              />
+            )}
             <RecentPosts posts={recentPosts} />
           </aside>
         </div>

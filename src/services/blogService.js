@@ -16,8 +16,12 @@ export const blogService = {
         title,
         slug,
         mainImage,
-        excerpt,
+        description,
         _createdAt,
+        "categories": categories[]-> {
+          _id,
+          title
+        },
         "author": author->name
       }[${offset}...${offset + POSTS_PER_PAGE}]`
 
@@ -48,10 +52,15 @@ export const blogService = {
       _id,
       title,
       slug,
-      _createdAt
+      mainImage,
+      _createdAt,
+      "categories": categories[]-> {
+        _id,
+        title
+      }
     }`
     return client.fetch(query)
-  },
+},
 
   async getPost({ slug }) {
     try {
@@ -62,6 +71,10 @@ export const blogService = {
         mainImage,
         body,
         _createdAt,
+        "categories": categories[]-> {
+        _id,
+        title
+      },
         "author": author->name
       }`
       

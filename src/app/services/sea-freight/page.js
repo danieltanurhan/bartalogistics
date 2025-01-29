@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import { QuoteFormContext } from '@/components/QuoteFormContext.js';
 import '@/styles/services-pages.css'
 import '@/styles/aboutus.css'
@@ -31,9 +32,13 @@ const differenceItems = [
 ];
 
 const SeaFreight = () => {
+  const router = useRouter();
   const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
   const onQuoteClick = () => {
     setIsQuoteFormOpen(true);
+  };
+  const onCBMClick = () => {
+    router.push('/cbm-calculator');
   };
 
   return (
@@ -124,7 +129,7 @@ const SeaFreight = () => {
                 </p>
               </div>
               <div className="footer-cbm-button">
-                <button className="about-button" onClick={onQuoteClick}>
+                <button className="about-button" onClick={onCBMClick}>
                   Calculate CBM
                 </button>
               </div>
