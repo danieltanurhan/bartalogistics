@@ -254,7 +254,7 @@
   }
 
   .navbar-nav-desktop li {
-    margin-left: 0.5rem;
+    margin-left: 0.4rem;
   }
 
   .navbar-nav-desktop a {
@@ -304,6 +304,7 @@
 
   .dropdown-menu li {
     margin: 0;
+    padding: 0;
     list-style: none;
     margin-left: 0;
   }
@@ -325,10 +326,16 @@
   .navbar-nav-desktop li {
     margin-left: 1rem;
   }
+  .dropdown-menu li {
+    margin: 0;
+  }
 }
 
 @media (min-width: 1440px) {
   .navbar-nav-desktop li {
     margin-left: 2rem;
+  }
+  .dropdown-menu li {
+    margin: 0;
   }
 }
