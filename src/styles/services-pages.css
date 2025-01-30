@@ -11,8 +11,8 @@
     flex-direction: column;
     align-items: left;
     text-align: left;
-    padding: 22px;
-    gap: 2em;
+    /* padding: 1.25rem; */
+    gap: 1.5rem;
     max-width: 700px;
 }
 
@@ -30,17 +30,15 @@
 }
 
 .services-board-content {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    text-align: start;  
+    display: grid;
+    grid-template-rows: auto auto; /* Title, meta, description, button */
+    gap: 0.75rem;
+    height: 100%;
 }
 
 .services-board-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    /* color: var(--secondary-color); */
-    margin-bottom: 0.1rem;
 }
 
 .contact-text h2 {
@@ -95,7 +93,10 @@
 
 @media (min-width: 768px) {
     .services-board-grid {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .footer-cbm-content {
@@ -118,8 +119,8 @@
 
 @media (min-width: 1440px) {
     .services-board-grid {
-        grid-template-columns: repeat(2, 1fr);   
-        max-width: 1920px;   
+        max-width: 1440px;
+        gap: 4rem;
     }
 
     .warehousing-text {

@@ -8,8 +8,8 @@ const Service = () => {
       href: "/services/international-moving",
       title: "International Moving",
       description:
-        "Efficient and reliable global freight solutions tailored to your business needs.",
-      image: "https://loremflickr.com/400/300/?random=1",
+        "Efficient and reliable global freight solutions tailored to your business.",
+      image: "/images/containers-loading.jpg",
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const Service = () => {
       title: "Air Freight",
       description:
         "State-of-the-art warehouse facilities to streamline your storage requirements.",
-      image: "https://loremflickr.com/400/300/?random=2",
+      image: "/images/plane-loading.jpg",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const Service = () => {
       title: "Sea Freight",
       description:
         "Simplify customs clearance with our experienced team of brokers.",
-      image: "https://loremflickr.com/400/300/?random=3",
+      image: "/images/ship-dock-loading.jpg",
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const Service = () => {
       title: "Road Freight",
       description:
         "Optimize your supply chain for maximum efficiency and cost savings.",
-      image: "https://loremflickr.com/400/300/?random=4",
+      image: "/images/trucks-birdseye.jpg",
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const Service = () => {
       title: "Rail Freight",
       description:
         "Comprehensive solutions for fast and accurate order fulfillment.",
-      image: "https://loremflickr.com/400/300/?random=5",
+      image:"/images/services/shipping.jpg",
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ const Service = () => {
       title: "Warehousing",
       description:
         "Expert logistics management for complex and large-scale projects.",
-      image: "https://loremflickr.com/400/300/?random=6",
+      image: "/images/warehouse.jpg",
     },
   ];
 

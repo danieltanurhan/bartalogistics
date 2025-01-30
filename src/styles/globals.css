@@ -201,7 +201,7 @@ header {
 
 /* Section Between Section */
 .sections-section {
-  padding: 50px 0 100px;
+  padding: 50px 0 60px;
   background-color: var(--bg-white);
 }
 
@@ -235,12 +235,17 @@ header {
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  /* justify-items: center; */
+  gap: 3rem; /* Match blog grid gap */
+  width: 100%;
+  max-width: 1200px; /* Match blog grid max-width */
+  margin: 0 auto;
 }
 
 .service-card {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/9; /* Match blog image aspect ratio */
+  height: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   overflow: hidden;
@@ -269,13 +274,22 @@ header {
   right: 0;
   bottom: 0;
   transition: background 0.3s ease;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 75%
+  );
+  z-index: 1;
 }
 
 .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: cover;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -326,7 +340,7 @@ header {
 /* Info Board Section */
 .info-board-section {
   position: relative;
-  padding: 60px 0;
+  padding: 12px 0;
   color: white;
   overflow: hidden;
 }
@@ -371,13 +385,13 @@ header {
   display: flex;
   align-items: start;
   padding: 12px;
-  color: var(--secondary-color);
+  color: var(--text-primary);
 }
 
 .info-board-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--text-primary);
   margin-bottom: 0.1rem;
   align-self: center;
 }
@@ -385,35 +399,43 @@ header {
 .info-board-description {
   color: var(--text-primary);
   margin-bottom: 1rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* Industries Section */
 .industries-grid {
   display: grid;
-  padding: 0 10;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .industry-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease;
-  overflow: hidden; /* Add this to contain the zoomed image */
+  display: grid; /* Change to grid instead of flex */
+  grid-template-rows: auto 5rem; /* First row for image, second for title */
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.industry-card .wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
 }
 
 .industry-image {
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
-  border-radius: 8px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  transition: transform 0.3s ease; /* Add transition for smooth zoom */
 }
 
 .industry-image::before {
@@ -423,12 +445,24 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
+  z-index: 1;
 }
 
-.industry-card:hover .industry-image {
-  transform: scale(1.1); /* Zoom effect on hover */
+/* Add styles for the actual image */
+.industry-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Change hover effect to target img instead of container */
+.industry-card:hover .industry-image img {
+  transform: scale(1.1);
+  
 }
 
 .industry-icon {
@@ -446,13 +480,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .industry-card h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-primary);
+  padding: 0.5rem 0;
+  text-align: center;
+  transition: color 0.3s ease;
+
+}
+
+.industry-card:hover h3 {
+  color: var(--secondary-color); /* Change color on hover of entire card */
 }
 
 /* Partners Section */
@@ -501,6 +543,14 @@ header {
   .about-text h2 {
     font-size: 1.8rem;
   }
+
+  .industry-card {
+    height: 250px;
+  }
+
+  .industry-card h3 {
+    font-size: 1.25rem; /* Slightly smaller font on mobile */
+  }
 }
 
 /* Responsive Breakpoints for All Sections */
@@ -548,10 +598,15 @@ header {
   /* Services Section */
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 
   .service-card {
     height: 350px;
+  }
+
+  .service-card:hover .content {
+    transform: translateY(-36px);
   }
 
   /* Info Board Section */
@@ -562,15 +617,11 @@ header {
   /* Industries Section */
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 
-  /* Partners Section */
-  .partners-grid {
-    grid-template-columns: repeat(3, 2fr);
-  }
-
-  .partner-logo {
-    height: 8rem;
+  .industry-card {
+    height: 350px;
   }
 }
 
@@ -598,15 +649,14 @@ header {
 
   /* Services Section */
   .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    padding-inline: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 20px;
     justify-items: center;
     max-width: 1250px;
   }
 
   .service-card {
-    max-height: 300px;
-    max-width: 400px;
+    max-width: 600px; /* Match blog item max-width */
   }
 
   /* Info Board Section */
@@ -618,7 +668,14 @@ header {
   }
 
   .industries-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 20px;
+    justify-items: center;
+    max-width: 1250px;
+  }
+
+  .industry-card {
+    max-width: 600px; /* Remove fixed max-width */
   }
 
   .partners-grid {
@@ -627,10 +684,21 @@ header {
 
 }
 
+@media (min-width: 1277px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .services-grid {
     justify-self: center;
     max-width: 1440px;
+    gap: 4rem;
   }
 
   .section-header {
@@ -651,8 +719,10 @@ header {
   }
 
   .industries-grid {
+    grid-template-columns: repeat(4, 1fr); 
     justify-self: center;
     max-width: 1440px;
+    gap: 4rem;
   }
 
   .partner-logo {

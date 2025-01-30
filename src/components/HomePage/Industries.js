@@ -10,49 +10,49 @@ const Industries = () => {
       icon: <FaCar />,
       href: "/industries/automotive",
       title: "Automotive",
-      image: "https://loremflickr.com/400/300/?random=2",
+      image: "/images/trucks-birdseye.jpg",
     },
     {
       icon: <FaMicrochip />,
       href: "/industries/technology",
       title: "Technology",
-      image: "https://loremflickr.com/400/300/?random=3",
+      image: "/images/checklist (2).jpg",
     },
     {
       icon: <FaShoppingCart />,
       href: "/industries/consumer-goods-and-retail",
       title: "Consumer Goods & Retail",
-      image: "https://loremflickr.com/400/300/?random=4",
+      image: "/images/warehouse.jpg",
     },
     {
       icon: <FaShieldAlt />,
       href: "/industries/relief-cargo-movement-and-defense",
       title: "Relief Cargo Movement & Defense",
-      image: "https://loremflickr.com/400/300/?random=5",
+      image: "/images/containers-loading.jpg",
     },
     {
       icon: <FaFlask />,
       href: "/industries/chemicals",
       title: "Chemicals",
-      image: "https://loremflickr.com/400/300/?random=6",
+      image: "/images/ship-docked.jpg",
     },
     {
       icon: <FaHotel />,
       href: "/industries/perishables",
       title: "Perishables",
-      image: "https://loremflickr.com/400/300/?random=7",
+      image: "/images/plane-loading.jpg",
     },
     {
       icon: <FaOilCan />,
       href: "/industries/antique-and-arts",
       title: "Antique and Arts",
-      image: "https://loremflickr.com/400/300/?random=8",
+      image: "/images/ship-containers-birdseye.jpg",
     },
     {
       icon: <FaHandHoldingMedical />,
       href: "/industries/fair-and-events",
       title: "Fair and Events",
-      image: "https://loremflickr.com/400/300/?random=1",
+      image: "/images/ship-dock-loading.jpg",
     },
   ];
 
@@ -80,12 +80,12 @@ const Industries = () => {
                 className="industry-card"
                 style={{textDecoration: 'none'}}
               >
-                <div
-                  className="industry-image"
-                  style={{ backgroundImage: `url(${industry.image})` }}
-                >
-                  <div className="industry-icon">
-                    {industry.icon}
+                <div className="wrapper">
+                  <div className="industry-image">
+                    <img src={industry.image} alt={industry.title} />
+                    <div className="industry-icon">
+                      {industry.icon}
+                    </div>
                   </div>
                 </div>
                 <h3>{industry.title}</h3>

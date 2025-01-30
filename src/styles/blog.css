@@ -537,7 +537,7 @@ background: linear-gradient(
 
 @media  (min-width: 1024px) {
     .blog-grid {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-self: center;
         /* padding-inline: 20px; */
     }
