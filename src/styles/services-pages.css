@@ -4,6 +4,7 @@
     gap: 2rem;
     text-align: center;
     justify-self: center;
+    width: 100%;
 }
 
 .services-board-item {
@@ -14,19 +15,26 @@
     /* padding: 1.25rem; */
     gap: 1.5rem;
     max-width: 700px;
+    width: 100%;
 }
 
 .services-board-image {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    width: 100%;
 }
 
-.services-board-image img{
+.services-board-image img {
     width: 100%;
-    /* vertical-align: middle;
-    justify-content: center;
-    max-width: 400px; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 .services-board-content {
@@ -39,6 +47,12 @@
 .services-board-title {
     font-size: 1.25rem;
     font-weight: 700;
+    margin-bottom: 0.1rem;
+    height: 3.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .contact-text h2 {
@@ -107,10 +121,15 @@
 
 @media  (min-width: 1024px) {
     .services-board-grid {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-self: center;
         padding-inline: 80px;
       }
+
+    .services-board-item {
+        max-width: 600px;
+        justify-self: center;
+    }
 
     .warehousing-text {
         max-width: 768px;
