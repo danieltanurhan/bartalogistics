@@ -13,7 +13,8 @@ import '@/styles/aboutus.css'
 import '@/styles/globals.css'
 import '@/styles/blog.css'
 import { BsCalendar4 } from 'react-icons/bs'
-import { FaFolder } from 'react-icons/fa'
+import { FaFolder, FaArrowLeft } from 'react-icons/fa'
+import useWindowSize from '@/hooks/useWindowSize'
 
 export default function BlogPostContent({ slug }) {
   // Move all state and handlers from [slug]/page.js here
@@ -25,53 +26,58 @@ export default function BlogPostContent({ slug }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const search = searchParams.get('search') || ''
+  const { width } = useWindowSize()
+  const isMobile = width < 768
 
- useEffect(() => {
-     setIsMounted(true)
-     if (slug) {
-        fetchPost()
-     }
-     fetchRecentPosts()
-   }, [slug])
- 
-   const fetchPost = async () => {
-     try {
-       setLoading(true)
-       const post = await blogService.getPost({slug})
-       if (!post) {
-         throw new Error('Post not found')
-       }
-       setPost(post)
-     } catch (err) {
-       setError('Failed to load blog posts')
-     } finally {
-       setLoading(false)
-     }
-   }
- 
- 
-   const fetchRecentPosts = async () => {
-     try {
-       const recent = await blogService.getRecentPosts()
-       setRecentPosts(recent)
-     } catch (err) {
-       console.error('Failed to load recent posts:', err)
-     }
-   }
-   
-   const handleSearch = (searchTerm) => {
-     if (isMounted) {
-       router.push(`/blog?search=${searchTerm}&page=1`)
-     }
-   }
- 
-   if (error) {
-     return <div className="error-message">{error}</div>
-   }
- 
-   if (!post) return <div>Loading...</div>
- 
-   return (
+  useEffect(() => {
+    setIsMounted(true)
+    if (slug) {
+      fetchPost()
+    }
+    fetchRecentPosts()
+  }, [slug])
+
+  const fetchPost = async () => {
+    try {
+      setLoading(true)
+      const post = await blogService.getPost({ slug })
+      if (!post) {
+        throw new Error('Post not found')
+      }
+      setPost(post)
+    } catch (err) {
+      setError('Failed to load blog posts')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const fetchRecentPosts = async () => {
+    try {
+      const recent = await blogService.getRecentPosts()
+      setRecentPosts(recent)
+    } catch (err) {
+      console.error('Failed to load recent posts:', err)
+    }
+  }
+
+  const handleSearch = (searchTerm) => {
+    if (isMounted) {
+      router.push(`/blog?search=${searchTerm}&page=1`)
+    }
+  }
+
+  const handleBack = () => {
+    router.push('/blog')
+  }
+
+  if (error) {
+    return <div className="error-message">{error}</div>
+  }
+
+  if (!post) return <div>Loading...</div>
+
+  return (
     <>
       <div className="blog-post-home-intro">
         <div className="home-content-container">
@@ -89,6 +95,18 @@ export default function BlogPostContent({ slug }) {
           <div className="blog-content-container">
             <main className="blog-main">
               <ErrorBoundary>
+                {isMobile && (
+                  <>
+                    <button onClick={handleBack} className="back-button">
+                      <FaArrowLeft className="back-icon" /> Back
+                    </button>
+                    <BlogSearch
+                      initialValue={search}
+                      onSearch={handleSearch}
+                      className="mobile-search"
+                    />
+                  </>
+                )}
                 <Suspense fallback={<LoadingState />}>
                   <article className="blog-post">
                     {post.mainImage && (
@@ -122,6 +140,17 @@ export default function BlogPostContent({ slug }) {
               </ErrorBoundary>
             </main>
             <aside className="blog-nav">
+              {!isMobile && (
+                <>
+                  <button onClick={handleBack} className="back-button">
+                    <FaArrowLeft className="back-icon" /> Back
+                  </button>
+                  <BlogSearch
+                    initialValue={search}
+                    onSearch={handleSearch}
+                  />
+                </>
+              )}
               <RecentPosts posts={recentPosts} />
             </aside>
           </div>

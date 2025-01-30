@@ -1,28 +1,27 @@
 import React from 'react';
-import { Lightbulb, Truck, Globe, ShieldCheck } from 'lucide-react';
 import '@/styles/globals.css';
-import { Scale, Network, Clock, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 const infoItems = [
   {
-    icon: <Scale size={64} />,
+    icon: "/images/flaticons/delivery-man.png",
     title: "Proven Track Record",
     description: "Decades of successful logistics operations worldwide, delivering excellence through experience and continuous innovation in global freight solutions."
   },
   {
-    icon: <Network size={64} />,
-    title: "Worldwide Coverage",
-    description: "Strategic partnerships and established routes across six continents ensure your cargo reaches any destination efficiently and cost-effectively."
+    icon: "/images/flaticons/logistics.png",
+    title: "Worldwide Network",
+    description: "Our extensive worldwide network enables us to provide seamless logistics solutions across continents, connecting businesses to opportunities around the globe."
   },
   {
-    icon: <Clock size={64} />,
-    title: "24/7 Support",
-    description: "Round-the-clock customer service and real-time tracking capabilities keep you informed and in control of your shipments at all times."
+    icon: "/images/flaticons/supply-chain-management.png",
+    title: "Customized Solutions",
+    description: "We understand that every business is unique. That's why we offer tailored logistics solutions to meet your specific needs, ensuring efficiency and cost-effectiveness."
   },
   {
-    icon: <Shield size={64} />,
-    title: "Secure Solutions",
-    description: "Advanced security protocols and certified handling procedures guarantee the safety and integrity of your cargo throughout its journey."
+    icon: "/images/flaticons/logistics1.png",
+    title: "Reliable Service",
+    description: "Count on us for consistent, dependable service. Our commitment to reliability means your cargo is in safe hands from pickup to delivery, every time."
   }
 ];
 
@@ -34,7 +33,12 @@ const InfoSection = () => {
           {infoItems.map((item, index) => (
             <div key={index} className="info-board-item">
               <div className="info-board-icon">
-                {item.icon}
+                <img 
+                  src={item.icon}
+                  alt={item.title}
+                  width="64"
+                  height="64"
+                />
               </div>
               <div className="info-board-content">
                 <div className="info-board-title">{item.title}</div>

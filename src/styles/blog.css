@@ -14,6 +14,13 @@
     gap: 20px;
     max-width: 1500px;
     width: 100%;
+    min-height: 100vh; /* Ensure container takes full height */
+}
+
+/* Update the blog-nav class to remove sticky by default */
+.blog-nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-grid {
@@ -146,7 +153,28 @@
 .blog-nav {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    position: sticky;
+    top: 80px; /* Adjust this value based on your navbar height */
+    height: fit-content;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.blog-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.blog-nav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.blog-nav::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.blog-nav::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .blog-search {
@@ -364,6 +392,7 @@ background: linear-gradient(
 .blog-post {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1.5rem;
     width: 100%;
 }
@@ -395,6 +424,12 @@ background: linear-gradient(
     font-size: 0.875rem;
     color: #666;
     /* margin-bottom: 1.5rem; */
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .blog-post .post-content {
@@ -465,6 +500,32 @@ background: linear-gradient(
     width: 100%;
 }
 
+/* Add these new styles */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--secondary-color);
+    font-family: var(--font-family);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+}
+
+.back-button .back-icon {
+    font-size: 0.875rem;
+}
+
 @media (min-width: 768px) {
     .post-content {
         font-size: 1.125rem;
@@ -530,8 +591,31 @@ background: linear-gradient(
     }
 
     .blog-nav {
-        /* width: 412px; */
-        /* flex-shrink: 0; */
+        position: sticky;
+        top: 115px; /* Adjust based on navbar height */
+        height: fit-content;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        width: 300px;
+        flex-shrink: 0;
+    }
+
+    /* Add scrollbar styling only for tablet+ */
+    .blog-nav::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .blog-nav::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .blog-nav::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+    }
+
+    .blog-nav::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 }
 
