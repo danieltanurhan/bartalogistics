@@ -1,11 +1,34 @@
 "use client";
 
-import { QuoteFormContext } from '@/components/QuoteFormContext.js';
-import '@/styles/industries-pages.css'
-import '@/styles/services-pages.css'
-import '@/styles/aboutus.css'
-import '@/styles/globals.css'
+import { QuoteFormContext } from '@/components/QuoteFormContext';
+import Script from 'next/script';
+import '@/styles/industries-pages.css';
+import '@/styles/services-pages.css';
+import '@/styles/aboutus.css';
+import '@/styles/globals.css';
 import { useContext } from 'react';
+
+const consumerGoodsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Consumer Goods & Retail Logistics Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Barta Logistics",
+    "url": "https://bartalogistics.com"
+  },
+  "description": "In the fast-paced world of consumer goods and retail, staying ahead means adapting quickly to changing consumer demands. Our logistics solutions are designed to keep your products moving efficiently from manufacturer to end consumer, whether through traditional retail channels or e-commerce platforms.",
+  "serviceType": [
+    "Omnichannel fulfillment solutions",
+    "Inventory management and forecasting",
+    "Reverse logistics and returns processing",
+    "Last-mile delivery optimization",
+    "Cross-border e-commerce logistics",
+    "Seasonal demand management",
+    "Product customization and kitting",
+    "Sustainable packaging solutions"
+  ]
+};
 
 const ConsumerGoods = () => {
   const { setIsQuoteFormOpen } = useContext(QuoteFormContext);
@@ -26,6 +49,10 @@ const ConsumerGoods = () => {
 
   return (
     <div>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(consumerGoodsJsonLd) }}
+      />
       <div className="about-home-intro">
         <div className="home-content-container">
           <div className="home-intro-content">

@@ -15,7 +15,11 @@ export default function BlogGrid({ posts }) {
           {post.mainImage && (
             <Link href={`/blog/${post.slug.current}`}>
               <div className="blog-image">
-                <img src={urlForImage(post.mainImage)} alt={post.title || 'Blog post image'} />
+                <img 
+                  src={urlForImage(post.mainImage)} 
+                  alt={post.mainImage.alt || post.title || 'Blog post image'}
+                  loading="lazy"
+                />
               </div>
             </Link>
           )}

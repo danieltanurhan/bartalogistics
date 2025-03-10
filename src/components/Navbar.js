@@ -6,25 +6,26 @@ import { Menu, ChevronLeft, ChevronRight } from 'lucide-react';
 import QuoteForm from './QuoteForm';
 import '@/styles/navbar.css';
 
-const servicesLinks = [
-  { href: '/services/international-moving', text: 'International Moving' },
-  { href: '/services/air-freight', text: 'Air Freight' },
-  { href: '/services/sea-freight', text: 'Sea Freight' },
-  { href: '/services/road-freight', text: 'Road Freight' },
-  { href: '/services/rail-freight', text: 'Rail Freight' },
-  { href: '/services/warehousing', text: 'Warehousing' },
-  { href: '/services/value-added', text: 'Value Added Services' }
+
+const servicesItems = [
+  { name: "International Moving", href: "/services/international-moving" },
+  { name: "Air Freight", href: "/services/air-freight" },
+  { name: "Sea Freight", href: "/services/sea-freight" },
+  { name: "Road Freight", href: "/services/road-freight" },
+  { name: "Rail Freight", href: "/services/rail-freight" },
+  { name: "Warehousing", href: "/services/warehousing" },
+  { name: "Value Added Services", href: "/services/value-added" },
 ];
 
-const industriesLinks = [
-  { href: '/industries/automotive', text: 'Automotive' },
-  { href: '/industries/technology', text: 'Technology' },
-  { href: '/industries/consumer-goods-and-retail', text: 'Consumer Goods & Retail' },
-  { href: '/industries/relief-cargo-movement-and-defense', text: 'Relief Cargo Movement & Defense' },
-  { href: '/industries/chemicals', text: 'Chemicals' },
-  { href: '/industries/perishables', text: 'Perishables' },
-  { href: '/industries/antique-and-arts', text: 'Antique & Arts' },
-  { href: '/industries/fair-and-events', text: 'Fair & Events' }
+const industriesItems = [
+  { name: "Automotive", href: "/industries/automotive" },
+  { name: "Technology", href: "/industries/technology" },
+  { name: "Chemicals", href: "/industries/chemicals" },
+  { name: "Consumer Goods & Retail", href: "/industries/consumer-goods-and-retail" },
+  { name: "Fair and Events", href: "/industries/fair-and-events" },
+  { name: "Perishables", href: "/industries/perishables" },
+  { name: "Relief Cargo Movement & Defense", href: "/industries/relief-cargo-movement-and-defense" },
+  { name: "Antique & Arts", href: "/industries/antique-and-arts" },
 ];
 
 const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
@@ -73,9 +74,9 @@ const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
               <li className="services-dropdown">
                 <a className="navbar-link" style={{ cursor: 'default' }}>SERVICES</a>
                 <ul className="dropdown-menu">
-                  {servicesLinks.map((service) => (
+                  {servicesItems.map((service) => (
                     <li key={service.href}>
-                      <Link href={service.href}>{service.text}</Link>
+                      <Link href={service.href}>{service.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -83,9 +84,9 @@ const Navbar = ({ isQuoteFormOpen, setIsQuoteFormOpen }) => {
               <li className="services-dropdown">
                 <a className="navbar-link" style={{ cursor: 'default' }}>INDUSTRIES</a>
                 <ul className="dropdown-menu">
-                  {industriesLinks.map((industry) => (
+                  {industriesItems.map((industry) => (
                     <li key={industry.href}>
-                      <Link href={industry.href}>{industry.text}</Link>
+                      <Link href={industry.href}>{industry.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -175,10 +176,10 @@ const SidebarServices = ({ onBack, onClose }) => (
       <ChevronLeft /> Back
     </button>
     <ul className="sidebar-nav">
-      {servicesLinks.map((service) => (
+      {servicesItems.map((service) => (
         <li key={service.href}>
           <Link href={service.href} onClick={onClose}>
-            {service.text}
+            {service.name}
           </Link>
         </li>
       ))}
@@ -192,10 +193,10 @@ const SidebarIndustries = ({ onBack, onClose }) => (
       <ChevronLeft /> Back
     </button>
     <ul className="sidebar-nav">
-      {industriesLinks.map((industry) => (
+      {industriesItems.map((industry) => (
         <li key={industry.href}>
           <Link href={industry.href} onClick={onClose}>
-            {industry.text}
+            {industry.name}
           </Link>
         </li>
       ))}
