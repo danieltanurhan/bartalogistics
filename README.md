@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Barta Logistics
 
-## Getting Started
+## Coming Soon
 
-First, run the development server:
+Welcome to Barta Logistics! We are currently working on something exciting and will be launching soon. Stay tuned for updates!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Mobile-first design
+- Engaging background images
+- Company logo prominently displayed
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the project locally, follow these steps:
 
-## Learn More
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Navigate to the project directory:
+   ```
+   cd bartalogistics
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install the dependencies:
+   ```
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Start the development server:
+   ```
+   npm run dev
+   ```
 
-## Deploy on Vercel
+### Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

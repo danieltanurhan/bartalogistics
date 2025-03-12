@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --barta-burgundy: #4a0404;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+/* Background image transitions */
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+/* Image scaling improvements */
+img.object-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo enhancements */
+.logo-shadow {
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+  -webkit-filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.logo-container {
+  position: relative;
+  display: inline-block;
+  /* Add overflow to contain the glow effect */
+  overflow: hidden;
+  /* Add max-width to ensure it doesn't extend */
+  max-width: max-content;
+}
+
+.logo-glow {
+  position: absolute;
+  inset: 0;
+  /* Use radial gradient instead of extending element */
+  background: radial-gradient(circle closest-side, rgba(74,4,4,0.2) 0%, rgba(0,0,0,0) 100%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(8px);
+  /* Ensure it doesn't extend beyond its container */
+  width: 100%;
+  height: 100%;
+}
+
+/* Optional: Keep this if you want to implement the zoom effect */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
