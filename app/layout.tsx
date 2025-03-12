@@ -16,6 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/favicon.svg" type="image/x-icon" />
+        <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon" />
+      </head>
       <body className={inter.className}>
         <div className="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center" 
              style={{ backgroundImage: "url('/images/background.jpg')" }}>
