@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Truck } from 'lucide-react';
-import { useAuth } from '@/components/admin/AuthContext';
+import { signIn } from '@/services/authService';
 import styles from '@/styles/admin/login.module.css';
 
 const loginSchema = z.object({
@@ -15,10 +15,13 @@ const loginSchema = z.object({
 });
 
 export default function LoginPage() {
-  const { signIn } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  
+  // Get the redirect URL if it exists
+  const redirectPath = searchParams.get('from') || '/admin';
   
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),
@@ -34,9 +37,16 @@ export default function LoginPage() {
       setError('');
       
       const { email, password } = data;
-      await signIn(email, password);
+      const { user, error } = await signIn(email, password);
       
-      router.push('/admin');
+      if (error) {
+        setError(error);
+        setLoading(false);
+        return;
+      }
+      
+      // Redirect to the original URL or admin dashboard
+      router.push(redirectPath);
     } catch (error) {
       console.error('Login error:', error);
       setError('Invalid email or password. Please try again.');
