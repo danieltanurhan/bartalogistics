@@ -6,10 +6,11 @@ import Footer from '@/components/Footer';
 import Navbar from "@/components/Navbar";
 import { QuoteFormProvider } from '@/components/QuoteFormContext';
 import { Analytics } from '@vercel/analytics/react';
+import { AuthProvider } from '@/components/admin/AuthContext';
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const isStudioRoute = pathname?.startsWith('/studio');
+  const isAdminOrStudioRoute = pathname?.startsWith('/admin') || pathname?.startsWith('/studio') || pathname?.startsWith('/login');
 
   return (
     <html lang="en">
@@ -19,18 +20,20 @@ export default function RootLayout({ children }) {
         </style>
       </head>
       <body>
-        {!isStudioRoute ? (
-          <QuoteFormProvider>
-            <main>{children}</main>
-            <Footer />
-            <Analytics />
-          </QuoteFormProvider>
-        ) : (
-          <>
-            <main>{children}</main>
-            <Analytics />
-          </>
-        )}
+        <AuthProvider>
+          {!isAdminOrStudioRoute ? (
+            <QuoteFormProvider>
+              <main>{children}</main>
+              <Footer />
+              <Analytics />
+            </QuoteFormProvider>
+          ) : (
+            <>
+              <main>{children}</main>
+              <Analytics />
+            </>
+          )}
+        </AuthProvider>
       </body>
     </html>
   );

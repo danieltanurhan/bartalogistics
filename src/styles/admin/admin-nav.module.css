@@ -1,0 +1,75 @@
+/* /styles/admin/admin-nav.module.css */
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .navContainer {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+  }
+  
+  .navFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .logoIcon {
+    color: #2563eb; /* blue-600 */
+    margin-right: 0.5rem;
+  }
+  
+  .navItems {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .userEmail {
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    color: #4b5563; /* gray-600 */
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .navLinkActive {
+    background-color: #e0f2fe; /* blue-100 */
+    color: #1d4ed8; /* blue-700 */
+  }
+  
+  .navLinkInactive {
+    color: #374151; /* gray-700 */
+  }
+  
+  .navLinkInactive:hover {
+    background-color: #f3f4f6; /* gray-100 */
+  }
+  
+  .navIcon {
+    margin-right: 0.25rem;
+  }

@@ -1,0 +1,35 @@
+/* /styles/admin/admin-layout.module.css */
+
+.layoutContainer {
+    min-height: 100vh;
+    background-color: #f9fafb; /* gray-50 */
+  }
+  
+  .mainContent {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .loadingSpinner {
+    height: 3rem;
+    width: 3rem;
+    border: 4px solid #e5e7eb; /* gray-200 */
+    border-top-color: #3b82f6; /* blue-500 */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

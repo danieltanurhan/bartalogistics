@@ -1,0 +1,75 @@
+/* /styles/admin/dashboard.module.css */
+
+.welcomeSection {
+    margin-bottom: 2rem;
+  }
+  
+  .dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .dashboardGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .dashboardCard {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .dashboardCard:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .cardContent {
+    display: flex;
+    align-items: center;
+  }
+  
+  .iconContainer {
+    padding: 0.75rem;
+    border-radius: 9999px;
+  }
+  
+  .iconBlue {
+    background-color: #dbeafe; /* blue-100 */
+  }
+  
+  .iconBlueInner {
+    color: #2563eb; /* blue-600 */
+  }
+  
+  .iconGray {
+    background-color: #f3f4f6; /* gray-100 */
+  }
+  
+  .iconGrayInner {
+    color: #4b5563; /* gray-600 */
+  }
+  
+  .cardTextContainer {
+    margin-left: 1rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937; /* gray-800 */
+  }
+  
+  .cardDescription {
+    font-size: 0.875rem;
+    color: #4b5563; /* gray-600 */
+  }
+  
+  .disabledCard {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
