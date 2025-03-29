@@ -201,7 +201,7 @@ export default function CreateDocumentPage() {
               }
               
               return (
-                <div key={field.name} className={field.type === 'textarea' ? styles.fullWidth : ''}>
+                <div key={field.name} className={styles.formFieldContainer}>
                   <div className={styles.formField}>
                     <label className={styles.label}>
                       {field.label}
@@ -212,7 +212,7 @@ export default function CreateDocumentPage() {
                       <textarea
                         {...register(field.name)}
                         className={styles.textarea}
-                        rows={4}
+                        rows={3} // Reduced to fit better in column
                       />
                     ) : field.type === 'date' ? (
                       <input
