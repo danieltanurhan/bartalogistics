@@ -7,7 +7,7 @@ import { generatePDF, downloadPDF } from '@/services/pdfService';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { ArrowLeft, Download } from 'lucide-react';
+import { ArrowLeft, Download, Plus, Trash } from 'lucide-react';
 import Link from 'next/link';
 import styles from '@/styles/admin/document-create.module.css';
 
@@ -17,6 +17,7 @@ export default function CreateDocumentPage() {
   const [template, setTemplate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
+  const [documentPoints, setDocumentPoints] = useState(['']);
   
   // Create dynamic validation schema based on template fields
   const createValidationSchema = (template) => {
@@ -25,6 +26,9 @@ export default function CreateDocumentPage() {
     const schemaFields = {};
     
     template.fields.forEach(field => {
+      // Skip documentPoints as we'll handle it separately
+      if (field.type === 'documentPoints') return;
+      
       if (field.required) {
         schemaFields[field.name] = z.string().min(1, `${field.label} is required`);
       } else {
@@ -71,9 +75,30 @@ export default function CreateDocumentPage() {
     resolver: zodResolver(validationSchema)
   });
 
+  const addDocumentPoint = () => {
+    setDocumentPoints([...documentPoints, '']);
+  };
+
+  const updateDocumentPoint = (index, value) => {
+    const updatedPoints = [...documentPoints];
+    updatedPoints[index] = value;
+    setDocumentPoints(updatedPoints);
+  };
+
+  const removeDocumentPoint = (index) => {
+    const updatedPoints = [...documentPoints];
+    updatedPoints.splice(index, 1);
+    setDocumentPoints(updatedPoints);
+  };
+
   const onSubmit = async (data) => {
     try {
       setGenerating(true);
+      
+      // Add document points to the data if not empty
+      if (documentPoints.filter(point => point.trim()).length > 0) {
+        data.documentPoints = documentPoints.filter(point => point.trim());
+      }
       
       // Generate PDF with form data and pass the templateId
       const pdfBytes = await generatePDF(
@@ -130,50 +155,96 @@ export default function CreateDocumentPage() {
       <div className={styles.card}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.formGrid}>
-            {template.fields.map((field) => (
-              <div key={field.name} className={field.type === 'textarea' ? styles.fullWidth : ''}>
-                <div className={styles.formField}>
-                  <label className={styles.label}>
-                    {field.label}
-                    {field.required && <span className={styles.requiredIndicator}>*</span>}
-                  </label>
-                  
-                  {field.type === 'textarea' ? (
-                    <textarea
-                      {...register(field.name)}
-                      className={styles.textarea}
-                      rows={4}
-                    />
-                  ) : field.type === 'date' ? (
-                    <input
-                      type="date"
-                      {...register(field.name)}
-                      className={styles.input}
-                    />
-                  ) : field.type === 'select' && field.options ? (
-                    <select
-                      {...register(field.name)}
-                      className={styles.select}
-                    >
-                      <option value="">Select {field.label}</option>
-                      {field.options.map(option => (
-                        <option key={option} value={option}>{option}</option>
-                      ))}
-                    </select>
-                  ) : (
-                    <input
-                      type={field.type || 'text'}
-                      {...register(field.name)}
-                      className={styles.input}
-                    />
-                  )}
-                  
-                  {errors[field.name] && (
-                    <p className={styles.errorText}>{errors[field.name].message}</p>
-                  )}
+            {template.fields.map((field) => {
+              if (field.type === 'documentPoints') {
+                return (
+                  <div key={field.name} className={styles.fullWidth}>
+                    <div className={styles.formField}>
+                      <label className={styles.label}>
+                        {field.label}
+                        {field.required && <span className={styles.requiredIndicator}>*</span>}
+                      </label>
+                      
+                      <div className={styles.documentPointsContainer}>
+                        {documentPoints.map((point, index) => (
+                          <div key={index} className={styles.documentPointRow}>
+                            <input
+                              type="text"
+                              value={point}
+                              onChange={(e) => updateDocumentPoint(index, e.target.value)}
+                              className={styles.input}
+                              placeholder={`Point ${index + 1}`}
+                            />
+                            {documentPoints.length > 1 && (
+                              <button
+                                type="button"
+                                onClick={() => removeDocumentPoint(index)}
+                                className={styles.removeButton}
+                              >
+                                <Trash size={16} />
+                              </button>
+                            )}
+                          </div>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={addDocumentPoint}
+                          className={styles.addButton}
+                        >
+                          <Plus size={16} className={styles.buttonIcon} />
+                          Add Document Point
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              
+              return (
+                <div key={field.name} className={field.type === 'textarea' ? styles.fullWidth : ''}>
+                  <div className={styles.formField}>
+                    <label className={styles.label}>
+                      {field.label}
+                      {field.required && <span className={styles.requiredIndicator}>*</span>}
+                    </label>
+                    
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        {...register(field.name)}
+                        className={styles.textarea}
+                        rows={4}
+                      />
+                    ) : field.type === 'date' ? (
+                      <input
+                        type="date"
+                        {...register(field.name)}
+                        className={styles.input}
+                      />
+                    ) : field.type === 'select' && field.options ? (
+                      <select
+                        {...register(field.name)}
+                        className={styles.select}
+                      >
+                        <option value="">Select {field.label}</option>
+                        {field.options.map(option => (
+                          <option key={option} value={option}>{option}</option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type || 'text'}
+                        {...register(field.name)}
+                        className={styles.input}
+                      />
+                    )}
+                    
+                    {errors[field.name] && (
+                      <p className={styles.errorText}>{errors[field.name].message}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           
           <div className={styles.buttonContainer}>

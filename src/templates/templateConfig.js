@@ -4,7 +4,7 @@ export const templates = [
     id: 'yuklemeTalimati',
     name: 'Yükleme Talimatı',
     description: 'Yükleme bilgilerini içeren standart talimat formu',
-    filePath: '/templates/yukleme-talimati-template.pdf',
+    filePath: '/templates/SHIPPING_NOTE_TEMPLATE.pdf',
     fields: [
       { name: 'shipper', label: 'Shipper', type: 'textarea', required: true },
       { name: 'consignee', label: 'Consignee', type: 'textarea', required: true },
@@ -42,6 +42,33 @@ export const templates = [
       { name: 'ukGumruk', label: 'UK Gümrük', type: 'text', required: true },
       { name: 'vesselNameVoyage', label: 'Vessel Name / Voyage', type: 'text', required: true },
       { name: 'konteynirNo', label: 'Konteynır No', type: 'text', required: true }
+    ]
+  },
+  {
+    id: 'offerTemplate',
+    name: 'Trade Offer',
+    description: 'Detailed price offer with terms and conditions',
+    filePath: '/templates/OFFER_TEMPLATE.pdf',
+    fields: [
+      { name: 'tradeQuoteId', label: 'Trade Quote ID', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'textarea', required: true },
+      { name: 'preparedFor', label: 'Prepared for', type: 'text', required: true },
+      { name: 'preparedBy', label: 'Prepared by', type: 'text', required: true },
+      { name: 'date', label: 'Date', type: 'date', required: true },
+      { name: 'consignee', label: 'Consignee', type: 'text', required: true },
+      { name: 'origin', label: 'Origin', type: 'text', required: true },
+      { name: 'destination', label: 'Destination', type: 'text', required: true },
+      { name: 'goods', label: 'Goods', type: 'text', required: true },
+      { name: 'volume', label: 'Volume', type: 'text', required: true },
+      { name: 'method', label: 'Method', type: 'text', required: true },
+      { name: 'terms', label: 'Terms', type: 'text', required: true },
+      { name: 'payment', label: 'Payment', type: 'text', required: true },
+      { name: 'comments', label: 'Comments', type: 'textarea', required: false },
+      { name: 'priceIncludes', label: 'Price Includes', type: 'textarea', required: false },
+      { name: 'transitTime', label: 'Transit Time', type: 'textarea', required: false },
+      { name: 'priceExcludes', label: 'Price Excludes', type: 'textarea', required: false },
+      { name: 'totalCharges', label: 'Total Charges', type: 'text', required: true },
+      { name: 'documentPoints', label: 'Document Points', type: 'documentPoints', required: false }
     ]
   }
 ];
