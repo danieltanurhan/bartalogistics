@@ -242,7 +242,7 @@ export const generatePDF = async (templatePath, formData, templateId) => {
       const { width, height } = documentPointsPage.getSize();
       
       // Define the area for document points
-      const startY = height - 200; // Starting Y position (adjust as needed)
+      const startY = height - 150; // Starting Y position (adjust as needed)
       const endY = 100; // Ending Y position (adjust as needed)
       const availableHeight = startY - endY;
       
